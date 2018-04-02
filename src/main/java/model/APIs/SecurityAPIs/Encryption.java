@@ -34,8 +34,8 @@ public class Encryption {
     public static byte[] encrypt_AES(String text) {
         try {
             Cipher encrypt = Cipher.getInstance("AES/CBC/PKCS5Padding");
-            IvParameterSpec iv_param_spec = get_iv_parameter_spec("src/main/java/key_file/iv_param_spec.txt");
-            SecretKey secret_key = get_secret_key("src/main/java/key_file/secret_key.txt");
+            IvParameterSpec iv_param_spec = get_iv_parameter_spec("src/main/resources/key_file/iv_param_spec.txt");
+            SecretKey secret_key = get_secret_key("src/main/resources/key_file/secret_key.txt");
             
             encrypt.init(Cipher.ENCRYPT_MODE, secret_key, iv_param_spec);
             byte[] byte_text = text.getBytes("UTF-8");            
@@ -56,6 +56,10 @@ public class Encryption {
         byte[] byte_iv = Files.readAllBytes(Paths.get(file_location));
         IvParameterSpec iv_param_spec = new IvParameterSpec(byte_iv);
         return iv_param_spec;
+    }
+    
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(encrypt_AES("123")));
     }
 
 }
