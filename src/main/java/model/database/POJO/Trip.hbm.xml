@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.database.POJO.Trip" table="Trip" optimistic-lock="version">
+        <id name="tripId" type="java.lang.Integer">
+            <column name="TripID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="line" class="model.database.POJO.Line" fetch="select">
+            <column name="FK_LineID" not-null="true" />
+        </many-to-one>
+        <property name="tripName" type="string">
+            <column name="TripName" length="50" not-null="true" />
+        </property>
+        <property name="description" type="string">
+            <column name="Description" length="50" />
+        </property>
+        <property name="modifiedDate" type="date">
+            <column name="ModifiedDate" length="10" not-null="true" />
+        </property>
+        <set name="coachDriverTrips" table="Coach_Driver_Trip" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FK_TripID" not-null="true" />
+            </key>
+            <one-to-many class="model.database.POJO.CoachDriverTrip" />
+        </set>
+        <one-to-one name="tripStatus" class="model.database.POJO.TripStatus"></one-to-one>
+        <set name="tickets" table="Ticket" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FK_TripID" not-null="true" />
+            </key>
+            <one-to-many class="model.database.POJO.Ticket" />
+        </set>
+        <one-to-one name="schedule" class="model.database.POJO.Schedule"></one-to-one>
+    </class>
+</hibernate-mapping>

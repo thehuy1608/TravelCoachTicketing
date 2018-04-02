@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="btnMenu" contentDisplay="TOP" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="DANH MỤC" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_Menu_48px_2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="btnHome" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_Home_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnAbout" contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_User_Account_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnTicketling" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_New_Ticket_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_Search_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_Help_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutY="126.0" prefHeight="674.0" prefWidth="1200.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="38.0" layoutY="35.0" prefHeight="45.0" prefWidth="659.0" text="Bước 4: Điền thông tin thẻ ngân hàng (Tùy chọn)" textFill="#070e59">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="1066.0" layoutY="604.0" style="-fx-text-fill: black;" text="Bước 4/4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="413.0" layoutY="102.0" text="Tên chủ thẻ:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCardHolder" layoutX="411.0" layoutY="140.0" prefHeight="45.0" prefWidth="387.0" promptText="Giống với tên trên thẻ của bạn" style="-fx-border-radius: 60;" />
+            <Label layoutX="411.0" layoutY="398.0" text="Số bảo mật thẻ:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSecurityCard" layoutX="411.0" layoutY="444.0" prefHeight="45.0" prefWidth="387.0" promptText="3 số cuối trong dãy số ở mặt sau của thẻ" style="-fx-border-radius: 60;" />
+            <JFXButton fx:id="btnBack" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="247.0" prefHeight="87.0" prefWidth="87.0" style="-fx-background-color: #4086f7; -fx-background-radius: 50px;" text=" " textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="btnBack" fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/icons8_Back_52px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label layoutX="413.0" layoutY="206.0" text="Số thẻ:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtCardNumber" layoutX="411.0" layoutY="247.0" prefHeight="45.0" prefWidth="387.0" promptText="Không ghi dấu &quot;-&quot; hoặc có khoảng trống" />
+            <Label layoutX="413.0" layoutY="312.0" text="Ngày hết hạn:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbMonth" layoutX="413.0" layoutY="353.0" prefWidth="150.0" promptText="Tháng" visibleRowCount="12" />
+            <ComboBox fx:id="cbYear" layoutX="580.0" layoutY="353.0" prefHeight="30.0" prefWidth="150.0" promptText="Năm" visibleRowCount="12" />
+            <JFXButton layoutX="188.0" layoutY="580.0" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: #4086f7;" text="Hoàn tất" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton layoutX="45.0" layoutY="580.0" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: white; -fx-border-color: #a4a4a4; -fx-border-radius: 2px;" text="Bỏ qua" textFill="#a4a4a4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

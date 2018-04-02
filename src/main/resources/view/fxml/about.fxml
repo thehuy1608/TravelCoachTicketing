@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: white;">
+         <children>
+            <JFXButton fx:id="btnMenu" contentDisplay="TOP" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="DANH MỤC" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8_Menu_48px_2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8_Home_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnAbout" contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8_User_Account_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnTicketling" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8_New_Ticket_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8_Search_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
+               <font>
+                  <Font name="Roboto Regular" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icon/icons8_Help_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutY="126.0" prefHeight="674.0" prefWidth="1200.0" style="-fx-background-color: WHITE;">
+         <children>
+            <ImageView fitHeight="111.0" fitWidth="393.0" layoutX="404.0" layoutY="1.0">
+               <image>
+                  <Image url="@../icon/logo2.PNG" />
+               </image>
+            </ImageView>
+            <Text layoutX="159.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thương hiệu hãng xe Minh Nhựt hiện đã trở nên rất quen thuộc với hành khách trên tuyến TP HCM – Các tỉnh Miền Tây với loại xe 16 chỗ chạy tần suất 10-15 phút/chuyến. Xe khách Minh Nhựt có chất lượng phục vụ ổn định, thân thiện, và được nhiều hành khách tin dùng để tham quan, du lịch Miền Tây, đặc biệt là các kỳ nghỉ, lễ tết. Hãng xe Minh Nhựt tin chắc rằng sự tận tâm phục vụ của mình sẽ làm hài lòng mọi quý khách." textAlignment="JUSTIFY" wrappingWidth="882.6708984375">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+            <Hyperlink layoutX="882.0" layoutY="252.0" text="Biết thêm về chúng tôi" />
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="232.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8_5_96px_1.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="160.0" layoutY="397.0" text="+5 năm hoạt động">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="540.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8_Refund_96px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="490.0" layoutY="397.0" text="Hoàn tiền 100%">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="120.0" fitWidth="120.0" layoutX="882.0" layoutY="277.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon/icons8_Online_Support_100px.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="859.0" layoutY="397.0" text="Hỗ trợ 24/7">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Text layoutX="165.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="An toàn, chu đáo, thân thiện" textAlignment="CENTER" wrappingWidth="254.9999961759895">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="530.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nếu chuyến đi của bạn bị trễ" textAlignment="CENTER" wrappingWidth="145.9999961759895">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="854.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chăm sóc khách hàng mọi lúc mọi nơi" textAlignment="CENTER" wrappingWidth="176.0000207722187">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <JFXButton layoutX="358.0" layoutY="519.0" prefHeight="65.0" prefWidth="487.0" style="-fx-background-color: #F9AF00; -fx-background-radius: 6px;" text="Tìm chuyến xe và đặt vé ngay bây giờ" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

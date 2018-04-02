@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.database.POJO.Station" table="Station" optimistic-lock="version">
+        <id name="stationId" type="java.lang.Integer">
+            <column name="StationID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cityOrDistrict" class="model.database.POJO.CityOrDistrict" fetch="select">
+            <column name="FK_CityOrDistrictID" not-null="true" />
+        </many-to-one>
+        <property name="stationName" type="string">
+            <column name="StationName" length="50" not-null="true" />
+        </property>
+        <property name="stationAddress" type="string">
+            <column name="StationAddress" length="100" not-null="true" />
+        </property>
+        <property name="stationHotline" type="string">
+            <column name="StationHotline" length="20" not-null="true" />
+        </property>
+        <property name="modifiedDate" type="date">
+            <column name="ModifiedDate" length="10" not-null="true" />
+        </property>
+        <set name="linesForDestinationStationId" table="Line" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Destination_StationID" not-null="true" />
+            </key>
+            <one-to-many class="model.database.POJO.Line" />
+        </set>
+        <set name="linesForDepartureStationId" table="Line" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Departure_StationID" not-null="true" />
+            </key>
+            <one-to-many class="model.database.POJO.Line" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.scene_controller.LoginSceneController">
+    <children>
+        <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+           
+        </AnchorPane>
+        <AnchorPane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: white;">
+            <children>
+                <JFXButton fx:id="btnMenu" contentDisplay="TOP" layoutY="-1.0" onAction="#toggle_side_menu" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="DANH MỤC" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/icons8_Menu_48px_2.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/icons8_Home_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnAbout" contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/icons8_User_Account_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnTicketing" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/icons8_New_Ticket_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/icons8_Search_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/icons8_Help_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+            <effect>
+                <DropShadow />
+            </effect>
+        </AnchorPane>
+        <AnchorPane fx:id="contentPane" layoutY="125.0" prefHeight="679.0" prefWidth="1200.0" style="-fx-background-color: white;">
+            <children>
+                <AnchorPane layoutX="344.0" layoutY="50.0" prefHeight="555.0" prefWidth="512.0" style="-fx-background-color: WHITE;">
+                    <children>
+                        <ImageView fitHeight="128.0" fitWidth="408.0" layoutX="52.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../icon/logo2.PNG" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="81.0" layoutY="145.0" text="TÊN TÀI KHOẢN / EMAIL:">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="txtUsername" layoutX="81.0" layoutY="172.0" prefHeight="31.0" prefWidth="351.0" />
+                        <JFXPasswordField fx:id="txtPassword" layoutX="81.0" layoutY="295.0" prefHeight="31.0" prefWidth="351.0" />
+                        <JFXButton fx:id="btnLogin" layoutX="268.0" layoutY="398.0" onAction="#login_button_action" prefHeight="49.0" prefWidth="164.0" ripplerFill="#a44949" style="-fx-border-radius: 5PX; -fx-background-color: #ff6672;" text="ĐĂNG NHẬP" textFill="WHITE">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" color="#8a1c1c" offsetX="2.0" offsetY="2.0" spread="0.28" />
+                            </effect>
+                        </JFXButton>
+                        <Hyperlink fx:id="lblForgot" layoutX="305.0" layoutY="459.0" text="Quên mật khẩu?">
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Hyperlink>
+                        <Label layoutX="81.0" layoutY="268.0" text="MẬT KHẨU:">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblUsernameMessage" layoutX="81.0" layoutY="203.0" prefHeight="49.0" prefWidth="351.0" textFill="#c5bebe">
+                            <font>
+                                <Font name="System Italic" size="15.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lblPasswordMessage" layoutX="81.0" layoutY="330.0" prefHeight="49.0" prefWidth="351.0" textFill="#c5bebe">
+                            <font>
+                                <Font name="System Italic" size="15.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <effect>
+                        <DropShadow height="33.44" offsetX="2.0" offsetY="2.0" radius="14.665" width="27.22" />
+                    </effect>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <JFXDrawer fx:id="drawer" defaultDrawerSize="300.0" layoutY="120.0" prefHeight="680.0" prefWidth="300.0" />
+    </children>
+</AnchorPane>

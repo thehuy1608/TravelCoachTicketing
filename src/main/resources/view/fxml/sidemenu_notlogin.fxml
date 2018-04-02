@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to top, #6a11cb 0%, #2575fc 100%);" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="300.0">
+         <children>
+            <Label fx:id="lblProfile" layoutX="60.0" layoutY="47.0" text="Đăng nhập" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-20.0">
+                     <image>
+                        <Image url="@../icon/icons8_Login_Rounded_Up_96px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="lblRegistration" layoutX="60.0" layoutY="107.0" text="Đăng ký" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-20.0">
+                     <image>
+                        <Image url="@../icon/icons8_Registration_96px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Label fx:id="lblHelp" layoutX="59.0" layoutY="167.0" text="Trợ giúp" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" translateX="-20.0">
+                     <image>
+                        <Image url="@../icon/icons8_Help_104px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
