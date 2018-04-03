@@ -27,7 +27,8 @@ import javax.crypto.spec.SecretKeySpec;
 public class Encryption {
 
     /**
-     *Encrypt the String entered in parameter text.
+     * Encrypt the String entered in parameter text.
+     *
      * @param text
      * @return byte[] The encrypted text represented in an array of bytes
      */
@@ -36,9 +37,9 @@ public class Encryption {
             Cipher encrypt = Cipher.getInstance("AES/CBC/PKCS5Padding");
             IvParameterSpec iv_param_spec = get_iv_parameter_spec("src/main/resources/key_file/iv_param_spec.txt");
             SecretKey secret_key = get_secret_key("src/main/resources/key_file/secret_key.txt");
-            
+
             encrypt.init(Cipher.ENCRYPT_MODE, secret_key, iv_param_spec);
-            byte[] byte_text = text.getBytes("UTF-8");            
+            byte[] byte_text = text.getBytes("UTF-8");
             byte[] encrypted_text = encrypt.doFinal(byte_text);
             return encrypted_text;
         } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e) {
@@ -46,20 +47,30 @@ public class Encryption {
         return null;
     }
 
+    public static String decrypt_AES(byte[] hash_text) {
+        String text = null;
+        try {
+            Cipher decrypt = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            IvParameterSpec iv_param_spec = get_iv_parameter_spec("src/main/resources/key_file/iv_param_spec.txt");
+            SecretKey secret_key = get_secret_key("src/main/resources/key_file/secret_key.txt");
+
+            decrypt.init(Cipher.DECRYPT_MODE, secret_key, iv_param_spec);
+            text = new String(decrypt.doFinal(hash_text), "UTF-8");
+            return text;
+        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e) {
+        }
+        return text;
+    }
+
     private static SecretKey get_secret_key(String file_location) throws IOException {
         byte[] byte_key = Files.readAllBytes(Paths.get(file_location));
         SecretKey secret_key = new SecretKeySpec(byte_key, "AES");
         return secret_key;
     }
-    
+
     private static IvParameterSpec get_iv_parameter_spec(String file_location) throws IOException {
         byte[] byte_iv = Files.readAllBytes(Paths.get(file_location));
         IvParameterSpec iv_param_spec = new IvParameterSpec(byte_iv);
         return iv_param_spec;
     }
-    
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(encrypt_AES("123")));
-    }
-
 }
