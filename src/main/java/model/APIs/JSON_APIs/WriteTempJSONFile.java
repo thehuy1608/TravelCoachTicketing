@@ -31,7 +31,7 @@ public class WriteTempJSONFile {
     /**
      * Make a directory in User Document directory to store JSON file.
      */
-    public static void make_temp_dir() {
+    private static void make_temp_dir() {
         String path = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "TravelBusTicketing";
         File documents_dir = new File(path);
         if (documents_dir.exists()) {
@@ -47,6 +47,7 @@ public class WriteTempJSONFile {
      *Write array byte to JSON writer stream
      * @param writer
      * @param array
+     * @throws java.io.IOException
      */
     public static void write_byte_array(JsonWriter writer, byte[] array) throws IOException {
         writer.beginArray();
@@ -123,11 +124,5 @@ public class WriteTempJSONFile {
         } catch (IOException ex) {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    public static void main(String[] args) {
-        Users user = UsersDAO.get_user_by_user_id(2);
-        write_JSON_user_data_file(user);
-        HibernateUtil.getSessionFactory().close();
     }
 }
