@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -24,28 +23,22 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_Menu_48px_2.png" />
+                        <Image url="@../../../icon/icons8_Menu_48px_2.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
             <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
                <font>
                   <Font name="Roboto Regular" size="20.0" />
                </font>
                <graphic>
-                  <ImageView fx:id="btnHome" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_Home_48px.png" />
+                        <Image url="@../../../icon/icons8_Home_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
             <JFXButton fx:id="btnAbout" contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
                <font>
@@ -54,13 +47,11 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_User_Account_48px.png" />
+                        <Image url="@../../../icon/icons8_User_Account_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+
             </JFXButton>
             <JFXButton fx:id="btnTicketling" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
                <font>
@@ -69,13 +60,10 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_New_Ticket_48px.png" />
+                        <Image url="@../../../icon/icons8_New_Ticket_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
             <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
                <font>
@@ -84,13 +72,10 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_Search_48px.png" />
+                        <Image url="@../../../icon/icons8_Search_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
             <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
                <font>
@@ -99,13 +84,10 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_Help_48px.png" />
+                        <Image url="@../../../icon/icons8_Help_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
          </children>
          <effect>
@@ -119,7 +101,7 @@
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label layoutX="1066.0" layoutY="604.0" style="-fx-text-fill: black;" text="Bước 4/4">
+            <Label layoutX="1054.0" layoutY="579.0" style="-fx-text-fill: black;" text="Bước 4/4">
                <font>
                   <Font size="18.0" />
                </font>
@@ -141,15 +123,12 @@
                   <Font size="21.0" />
                </font>
                <graphic>
-                  <ImageView fx:id="btnBack" fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../icon/icons8_Back_52px.png" />
+                        <Image url="@../../../icon/icons8_Back_52px.png" />
                      </image>
                   </ImageView>
                </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
             <Label layoutX="413.0" layoutY="206.0" text="Số thẻ:">
                <font>
@@ -164,21 +143,15 @@
             </Label>
             <ComboBox fx:id="cbMonth" layoutX="413.0" layoutY="353.0" prefWidth="150.0" promptText="Tháng" visibleRowCount="12" />
             <ComboBox fx:id="cbYear" layoutX="580.0" layoutY="353.0" prefHeight="30.0" prefWidth="150.0" promptText="Năm" visibleRowCount="12" />
-            <JFXButton layoutX="188.0" layoutY="580.0" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: #4086f7;" text="Hoàn tất" textFill="WHITE">
+            <JFXButton layoutX="675.0" layoutY="519.0" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: #4086f7;" text="Hoàn tất" textFill="WHITE">
                <font>
                   <Font size="20.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </JFXButton>
-            <JFXButton layoutX="45.0" layoutY="580.0" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: white; -fx-border-color: #a4a4a4; -fx-border-radius: 2px;" text="Bỏ qua" textFill="#a4a4a4">
+            <JFXButton layoutX="532.0" layoutY="519.0" prefHeight="60.0" prefWidth="126.0" style="-fx-background-color: white; -fx-border-color: #a4a4a4; -fx-border-radius: 2px;" text="Bỏ qua" textFill="#a4a4a4">
                <font>
                   <Font size="20.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
