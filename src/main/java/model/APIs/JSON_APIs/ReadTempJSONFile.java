@@ -80,6 +80,18 @@ public class ReadTempJSONFile {
         return hash_user_id;
     }
     
+    public static int get_user_id_from_JSON_data() throws UnsupportedEncodingException, IOException {
+        int user_id;
+        byte[] hash_user_id;
+        hash_user_id = convert_byte_list_to_byte_array(read_JSON_user_data_file());
+        user_id = Integer.parseInt(Encryption.decrypt_AES(hash_user_id));
+        if (user_id > 0) {
+            return user_id;
+        } else {
+            return 0;
+        }
+    }
+    
     //Simple function to convert an primtive type list to array.
     private static byte[] convert_byte_list_to_byte_array(List<Byte> byte_list) {
         byte[] byte_array = new byte[byte_list.size()];
