@@ -13,11 +13,13 @@ public class UserData {
     private final boolean is_logged_in;
     private final byte[] user_id;
     private final String user_type;
+    private final String current_scene;
 
-    public UserData(boolean is_logged_in, byte[] user_id, String user_type) {
+    public UserData(boolean is_logged_in, byte[] user_id, String user_type, String current_scene) {
         this.is_logged_in = is_logged_in;
         this.user_id = user_id;
         this.user_type = user_type;
+        this.current_scene = current_scene;
     }
 
     public boolean get_logged_in() {
@@ -32,5 +34,8 @@ public class UserData {
         return user_type;
     }
     
+    public String get_current_scene() {
+        return current_scene;
+    }
     
 }

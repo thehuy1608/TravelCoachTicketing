@@ -54,6 +54,7 @@ public class ReadTempJSONFile {
         boolean is_logged_in = false;
         byte[] user_id = null;
         String user_type = null;
+        String current_scene = null;
         reader.beginObject();
         while (reader.hasNext()) {
             String name = reader.nextName();
@@ -71,13 +72,15 @@ public class ReadTempJSONFile {
                     case "Account Type":
                         user_type = reader.nextString();
                         break;
+                    case "Current Scene":
+                        current_scene = reader.nextString();
                     default:
                         reader.skipValue();
                         break;
                 }
             }
         }
-        UserData user_data = new UserData(is_logged_in, user_id, user_type);
+        UserData user_data = new UserData(is_logged_in, user_id, user_type, current_scene);
         return user_data;
     }
 

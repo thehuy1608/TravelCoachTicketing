@@ -73,6 +73,7 @@ public class WriteTempJSONFile {
             }
 
             writer.name("Account Type").value(user_data.get_user_type());
+            writer.name("Current Scene").value(user_data.get_current_scene());
             writer.endObject();
         } catch (IOException ex) {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);

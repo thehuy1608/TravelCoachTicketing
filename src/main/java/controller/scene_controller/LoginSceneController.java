@@ -230,8 +230,9 @@ public class LoginSceneController implements Initializable {
                     } else if (user.getIsGoogleLogin() > 0) {
                         account_type = "Google Account";
                     }
+                    String next_scene = "home";
 
-                    UserData user_data = new UserData(is_logged_in, hash_user_id, account_type);
+                    UserData user_data = new UserData(is_logged_in, hash_user_id, account_type, next_scene);
                     WriteTempJSONFile.write_JSON_user_data_file(user_data);
                 }
                 return null;
