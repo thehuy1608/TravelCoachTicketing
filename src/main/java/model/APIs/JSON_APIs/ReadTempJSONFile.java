@@ -6,6 +6,7 @@
 package model.APIs.JSON_APIs;
 
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,8 +15,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import model.APIs.SecurityAPIs.Encryption;
+import model.APIs.JSON_APIs.DAO.UserData;
 
 /**
  * Read temporary JSON file that will store the shared data among scenes of
@@ -43,55 +45,60 @@ public class ReadTempJSONFile {
     }
 
     /**
-     * Read the Users ID object in JSON file and return the hash code of user ID
+     * Read the UserData object in JSON file input stream
      *
      * @param reader
      * @return
      * @throws IOException
      */
-    public static List<Byte> read_hash_user_id(JsonReader reader) throws IOException {
-        List<Byte> hash_user_id = new ArrayList<>();
+    public static UserData read_user_data_object(JsonReader reader) throws IOException {
+        boolean is_logged_in = false;
+        byte[] user_id = null;
+        String user_type = null;
         reader.beginObject();
         while (reader.hasNext()) {
             String name = reader.nextName();
-            if (name.equalsIgnoreCase("User ID")) {
-                hash_user_id = read_byte_array(reader);
-            } else {
+            JsonToken token = reader.peek();
+            if (token == JsonToken.NULL) {
                 reader.skipValue();
+            } else {
+                switch (name) {
+                    case "User ID":
+                        user_id = convert_byte_list_to_byte_array(read_byte_array(reader));
+                        break;
+                    case "Is Logged In":
+                        is_logged_in = reader.nextBoolean();
+                        break;
+                    case "Account Type":
+                        user_type = reader.nextString();
+                        break;
+                    default:
+                        reader.skipValue();
+                        break;
+                }
             }
         }
-        reader.endObject();
-        return hash_user_id;
+        UserData user_data = new UserData(is_logged_in, user_id, user_type);
+        return user_data;
     }
 
     /**
-     *Read the Users ID object in JSON file from input stream and return the hash code of user ID
+     * Read the Users ID object in JSON file from input stream and return the
+     * hash code of user ID
+     *
      * @return
      * @throws FileNotFoundException
      * @throws UnsupportedEncodingException
      * @throws IOException
      */
-    public static List<Byte> read_JSON_user_data_file() throws FileNotFoundException, UnsupportedEncodingException, IOException {
-        List<Byte> hash_user_id = null;
+    public static UserData read_JSON_user_data_file() throws FileNotFoundException, UnsupportedEncodingException, IOException {
         String path = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "TravelBusTicketing" + File.separator + "User.json";
         InputStream fis = new FileInputStream(path);
         JsonReader reader = new JsonReader(new InputStreamReader(fis, "UTF-8"));
-        hash_user_id = read_hash_user_id(reader);
-        return hash_user_id;
+        UserData user_data = read_user_data_object(reader);
+        return user_data;
     }
-    
-    public static int get_user_id_from_JSON_data() throws UnsupportedEncodingException, IOException {
-        int user_id;
-        byte[] hash_user_id;
-        hash_user_id = convert_byte_list_to_byte_array(read_JSON_user_data_file());
-        user_id = Integer.parseInt(Encryption.decrypt_AES(hash_user_id));
-        if (user_id > 0) {
-            return user_id;
-        } else {
-            return 0;
-        }
-    }
-    
+
     //Simple function to convert an primtive type list to array.
     private static byte[] convert_byte_list_to_byte_array(List<Byte> byte_list) {
         byte[] byte_array = new byte[byte_list.size()];
@@ -101,5 +108,3 @@ public class ReadTempJSONFile {
         return byte_array;
     }
 }
-
-

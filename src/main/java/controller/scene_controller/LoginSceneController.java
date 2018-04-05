@@ -38,7 +38,9 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import model.APIs.JSON_APIs.DAO.UserData;
 import model.APIs.JSON_APIs.WriteTempJSONFile;
+import model.APIs.SecurityAPIs.Encryption;
 import model.APIs.ValidateAPIs.ValidateInput;
 import model.database.DAO.LoginInfoDAO;
 import model.database.POJO.Users;
@@ -220,7 +222,17 @@ public class LoginSceneController implements Initializable {
                 is_valid_login = LoginInfoDAO.check_login(login_name, login_password);
                 if (is_valid_login > 0) {
                     Users user = LoginInfoDAO.get_user_by_login_name_and_password(login_name, login_password);
-                    WriteTempJSONFile.write_JSON_user_data_file(user);
+                    boolean is_logged_in = true;
+                    byte[] hash_user_id = Encryption.encrypt_AES(user.getUserId().toString());
+                    String account_type = "Normal Account";
+                    if (user.getIsFacebookLogin() > 0) {
+                        account_type = "Facebook Account";
+                    } else if (user.getIsGoogleLogin() > 0) {
+                        account_type = "Google Account";
+                    }
+
+                    UserData user_data = new UserData(is_logged_in, hash_user_id, account_type);
+                    WriteTempJSONFile.write_JSON_user_data_file(user_data);
                 }
                 return null;
             }
@@ -257,6 +269,18 @@ public class LoginSceneController implements Initializable {
                 alert.showAndWait();
             }
         });
+    }
+
+    @FXML
+    private void home_button_action() {
+        try {
+            Stage current_stage = (Stage) btnLogin.getScene().getWindow();
+            StageController home_stage = new StageController();
+            home_stage.configure_stage(current_stage, "/view/fxml/home.fxml", "Minh Nhut Corporation", 1200, 800);
+            current_stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML

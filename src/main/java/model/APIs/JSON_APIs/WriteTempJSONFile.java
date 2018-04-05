@@ -15,10 +15,7 @@ import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import model.APIs.SecurityAPIs.Encryption;
-import model.database.DAO.UsersDAO;
-import model.database.POJO.Users;
-import model.database.hibernate.HibernateUtil;
+import model.APIs.JSON_APIs.DAO.UserData;
 
 /**
  * Write temporary JSON file that will store the shared data among scenes of
@@ -42,9 +39,10 @@ public class WriteTempJSONFile {
             System.out.println("Error");
         }
     }
-    
+
     /**
-     *Write array byte to JSON writer stream
+     * Write array byte to JSON writer stream
+     *
      * @param writer
      * @param array
      * @throws java.io.IOException
@@ -58,27 +56,23 @@ public class WriteTempJSONFile {
     }
 
     /**
-     * Write User object to the JSON writer stream.
+     * Write UserData object to the JSON writer stream.
      *
      * @param writer
-     * @param user
+     * @param user_data
      */
-    public static void write_user_object(JsonWriter writer, Users user) {
+    public static void write_user_data_object(JsonWriter writer, UserData user_data) {
         try {
             writer.beginObject();
-            String user_id_string = Integer.toString(user.getUserId());
-            byte[] hash_user_id_string = Encryption.encrypt_AES(user_id_string);
+            writer.name("Is Logged In").value(user_data.get_logged_in());
             writer.name("User ID");
-            write_byte_array(writer, hash_user_id_string);
-            if (user.getIsFacebookLogin() > 0) {
-                writer.name("Account Type").value("Facebook account");
+            if (user_data.get_user_id() == null) {
+                writer.nullValue();
+            } else {
+                write_byte_array(writer, user_data.get_user_id());
             }
-            if (user.getIsGoogleLogin() > 0) {
-                writer.name("Account Type").value("Google account");
-            }
-            if (user.getIsFacebookLogin() == 0 && user.getIsGoogleLogin() == 0) {
-                writer.name("Account Type").value("Normal account");
-            }
+
+            writer.name("Account Type").value(user_data.get_user_type());
             writer.endObject();
         } catch (IOException ex) {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
@@ -89,14 +83,14 @@ public class WriteTempJSONFile {
      * Write User object to the output stream
      *
      * @param out
-     * @param user
+     * @param user_data
      */
-    public static void write_JSON_user_data_stream(OutputStream out, Users user) {
+    public static void write_JSON_user_data_stream(OutputStream out, UserData user_data) {
         try (JsonWriter writer = new JsonWriter(new OutputStreamWriter(out, "UTF-8"))) {
             writer.setIndent("    ");
             writer.setSerializeNulls(true);
             writer.setHtmlSafe(true);
-            write_user_object(writer, user);
+            write_user_data_object(writer, user_data);
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -107,16 +101,16 @@ public class WriteTempJSONFile {
     /**
      * Write User object to the JSON file.
      *
-     * @param user
+     * @param user_data
      */
-    public static void write_JSON_user_data_file(Users user) {
+    public static void write_JSON_user_data_file(UserData user_data) {
         try {
             String path = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "TravelBusTicketing" + File.separator + "User.json";
             File json_file = new File(path);
             Files.deleteIfExists(json_file.toPath());
             if (json_file.createNewFile()) {
                 FileOutputStream fos = new FileOutputStream(json_file);
-                write_JSON_user_data_stream(fos, user);
+                write_JSON_user_data_stream(fos, user_data);
                 System.out.println("Data has been added.");
             } else {
                 System.out.println("Unknown Error");

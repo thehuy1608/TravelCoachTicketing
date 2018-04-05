@@ -31,7 +31,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
+                <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" onAction="#home_button_action" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>

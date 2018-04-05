@@ -15,7 +15,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.concurrent.Task;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,9 +22,9 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import model.APIs.JSON_APIs.DAO.UserData;
 import model.APIs.JSON_APIs.ReadTempJSONFile;
-import model.database.DAO.UsersDAO;
-import model.database.POJO.Users;
+import model.APIs.SecurityAPIs.Encryption;
 
 /**
  * FXML Controller class
@@ -60,7 +59,7 @@ public class HomeSceneController implements Initializable {
     private JFXDrawer drawer;
 
     private LoadingAnchorPane loading_anchor_pane;
-    private Users user;
+    private UserData user_data;
 
     /**
      * Initializes the controller class.
@@ -83,13 +82,8 @@ public class HomeSceneController implements Initializable {
         Task load_user_data_after_login = new Task<Boolean>() {
             @Override
             protected Boolean call() throws Exception {
-                int user_id = ReadTempJSONFile.get_user_id_from_JSON_data();
-                if (user_id > 0) {
-                    user = UsersDAO.get_user_by_user_id(user_id);
-                    return true;
-                } else {
-                    return false;
-                }
+                user_data = ReadTempJSONFile.read_JSON_user_data_file();
+                return true;
             }
         };
 
@@ -99,13 +93,22 @@ public class HomeSceneController implements Initializable {
 
         load_user_data_after_login.setOnSucceeded((Event event) -> {
             //Add side-menu
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/fxml/sidemenu_login.fxml"));
-                VBox box = loader.load();
-                Sidemenu_loginSceneController controller = loader.getController();
-                controller.set_username_label(user.getUserId().toString());
-                drawer.setSidePane(box);
-            } catch (IOException e) {
+            if (user_data.get_logged_in()) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/fxml/sidemenu_login.fxml"));
+                    VBox box = loader.load();
+                    Sidemenu_loginSceneController controller = loader.getController();
+                    controller.set_username_label(Encryption.decrypt_AES(user_data.get_user_id()));
+                    drawer.setSidePane(box);
+                } catch (IOException e) {
+                }
+            } else {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/fxml/sidemenu_notlogin.fxml"));
+                    VBox box = loader.load();
+                    drawer.setSidePane(box);
+                } catch (IOException e) {
+                }
             }
             //Set hand cursor when mouse enters button
             set_hand_cursor_for_button(btnMenu);
