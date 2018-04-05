@@ -7,6 +7,8 @@ package model.database.DAO;
 
 import java.util.List;
 import model.APIs.SecurityAPIs.Encryption;
+import model.database.POJO.LoginInfo;
+import model.database.POJO.Users;
 import model.database.hibernate.HibernateUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,7 +20,8 @@ import org.hibernate.Session;
 public class LoginInfoDAO {
 
     /**
-     *Verify login information of user
+     * Verify login information of user
+     *
      * @param login_name String
      * @param login_password String
      * @return true if the login is matched, false otherwise.
@@ -33,10 +36,9 @@ public class LoginInfoDAO {
             query.setString("param_login_name", login_name);
             query.setBinary("param_login_password", encrypted_login_password);
             List<Long> result_list = query.list();
-            long result =  result_list.get(0);
+            long result = result_list.get(0);
             if (result > 0) {
-                System.out.println(result);
-                return result;                
+                return result;
             } else {
                 return 0;
             }
@@ -49,5 +51,29 @@ public class LoginInfoDAO {
         return 0;
     }
 
-
+    public static Users get_user_by_login_name_and_password(String login_name, String login_password) {
+        Users user = null;
+        Session hibernate_session = HibernateUtil.getSessionFactory().openSession();
+        hibernate_session.beginTransaction();
+        try {
+            byte[] encrypted_login_password = Encryption.encrypt_AES(login_password);
+            String hql = "SELECT userId FROM LoginInfo login_info WHERE login_info.loginName=:param_login_name AND login_info.loginPassword=:param_login_password";
+            Query query = hibernate_session.createQuery(hql);
+            query.setString("param_login_name", login_name);
+            query.setBinary("param_login_password", encrypted_login_password);
+            List<Integer> result_list = query.list();
+            int user_id = result_list.get(0);
+            if (user_id > 0) {
+                user = (Users) hibernate_session.get(Users.class, user_id);
+            } else {
+                return null;
+            }
+        } catch (Exception e) {
+            hibernate_session.flush();
+            hibernate_session.close();
+        }
+        hibernate_session.flush();
+        hibernate_session.close();
+        return user;
+    }
 }

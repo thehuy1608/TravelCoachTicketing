@@ -38,8 +38,10 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import model.APIs.JSON_APIs.WriteTempJSONFile;
 import model.APIs.ValidateAPIs.ValidateInput;
 import model.database.DAO.LoginInfoDAO;
+import model.database.POJO.Users;
 
 /**
  * FXML Controller class
@@ -216,6 +218,10 @@ public class LoginSceneController implements Initializable {
 
                 //Check user's login info
                 is_valid_login = LoginInfoDAO.check_login(login_name, login_password);
+                if (is_valid_login > 0) {
+                    Users user = LoginInfoDAO.get_user_by_login_name_and_password(login_name, login_password);
+                    WriteTempJSONFile.write_JSON_user_data_file(user);
+                }
                 return null;
             }
         };

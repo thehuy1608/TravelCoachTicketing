@@ -40,38 +40,38 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://travelcoachticketing.c0ef9o9fmyt3.us-east-1.rds.amazonaws.com:3306/TravelCoachTicketing</property>
-        <property name="hibernate.connection.username">huynguyen</property>
-        <property name="hibernate.connection.password">thehuy123</property>
-        <property name="hibernate.current_session_context_class">thread</property>
-        <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-        <property name="hibernate.default_catalog">TravelCoachTicketing</property>
-        <mapping resource="model/database/POJO/TripStatus.hbm.xml"/>
-        <mapping resource="model/database/POJO/Invoice.hbm.xml"/>
-        <mapping resource="model/database/POJO/UserPaymentInfo.hbm.xml"/>
-        <mapping resource="model/database/POJO/Trip.hbm.xml"/>
-        <mapping resource="model/database/POJO/Line.hbm.xml"/>
-        <mapping resource="model/database/POJO/UserTripLog.hbm.xml"/>
-        <mapping resource="model/database/POJO/Role.hbm.xml"/>
-        <mapping resource="model/database/POJO/SpecialPromotion.hbm.xml"/>
-        <mapping resource="model/database/POJO/UserInfo.hbm.xml"/>
-        <mapping resource="model/database/POJO/Country.hbm.xml"/>
-        <mapping resource="model/database/POJO/CityOrDistrict.hbm.xml"/>
-        <mapping resource="model/database/POJO/Users.hbm.xml"/>
-        <mapping resource="model/database/POJO/Ticket.hbm.xml"/>
-        <mapping resource="model/database/POJO/CoachDriverTrip.hbm.xml"/>
-        <mapping resource="model/database/POJO/LoginInfo.hbm.xml"/>
-        <mapping resource="model/database/POJO/Station.hbm.xml"/>
-        <mapping resource="model/database/POJO/Schedule.hbm.xml"/>
-        <mapping resource="model/database/POJO/UserFacebookAccount.hbm.xml"/>
-        <mapping resource="model/database/POJO/Coach.hbm.xml"/>
-        <mapping resource="model/database/POJO/Driver.hbm.xml"/>
-        <mapping resource="model/database/POJO/InvoiceLineItem.hbm.xml"/>
-        <mapping resource="model/database/POJO/UserGoogleAccount.hbm.xml"/>
-    </session-factory>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/travelcoachticketing</property>
+    <property name="hibernate.connection.username">huynguyen</property>
+    <property name="hibernate.connection.password">thehuy123</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+    <property name="hibernate.default_catalog">TravelCoachTicketing</property>
+    <mapping resource="model/database/POJO/TripStatus.hbm.xml"/>
+    <mapping resource="model/database/POJO/Invoice.hbm.xml"/>
+    <mapping resource="model/database/POJO/UserPaymentInfo.hbm.xml"/>
+    <mapping resource="model/database/POJO/Trip.hbm.xml"/>
+    <mapping resource="model/database/POJO/Line.hbm.xml"/>
+    <mapping resource="model/database/POJO/UserTripLog.hbm.xml"/>
+    <mapping resource="model/database/POJO/Role.hbm.xml"/>
+    <mapping resource="model/database/POJO/SpecialPromotion.hbm.xml"/>
+    <mapping resource="model/database/POJO/UserInfo.hbm.xml"/>
+    <mapping resource="model/database/POJO/Country.hbm.xml"/>
+    <mapping resource="model/database/POJO/CityOrDistrict.hbm.xml"/>
+    <mapping resource="model/database/POJO/Users.hbm.xml"/>
+    <mapping resource="model/database/POJO/Ticket.hbm.xml"/>
+    <mapping resource="model/database/POJO/CoachDriverTrip.hbm.xml"/>
+    <mapping resource="model/database/POJO/LoginInfo.hbm.xml"/>
+    <mapping resource="model/database/POJO/Station.hbm.xml"/>
+    <mapping resource="model/database/POJO/Schedule.hbm.xml"/>
+    <mapping resource="model/database/POJO/UserFacebookAccount.hbm.xml"/>
+    <mapping resource="model/database/POJO/Coach.hbm.xml"/>
+    <mapping resource="model/database/POJO/Driver.hbm.xml"/>
+    <mapping resource="model/database/POJO/InvoiceLineItem.hbm.xml"/>
+    <mapping resource="model/database/POJO/UserGoogleAccount.hbm.xml"/>
+  </session-factory>
 </hibernate-configuration>

@@ -7,9 +7,12 @@ package controller.scene_controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -51,6 +54,8 @@ public class HomeSceneController implements Initializable {
     @FXML
     private JFXDrawer drawer;
 
+    private LoadingAnchorPane loading_anchor_pane;
+
     /**
      * Initializes the controller class.
      *
@@ -60,10 +65,29 @@ public class HomeSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-
-        //Add side-menu
+        loading_anchor_pane = new LoadingAnchorPane();
         try {
-            VBox box = FXMLLoader.load(getClass().getResource("/view/fxml/sidemenu_login.fxml"));
+            loading_anchor_pane.configure_pane(1200, 800, "#000000", 0.8);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LoginSceneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        rootPane.getChildren().add(loading_anchor_pane);
+        loading_anchor_pane.toFront();
+
+//        Thread javafx_application_thread = Thread.currentThread();
+//        try {
+//            javafx_application_thread.wait();
+//        } catch (InterruptedException ex) {
+//            Logger.getLogger(HomeSceneController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        //Add side-menu
+//        try {
+//            VBox box = FXMLLoader.load(getClass().getResource("/view/fxml/sidemenu_login.fxml"));
+//            drawer.setSidePane(box);
+//        } catch (IOException e) {
+//        }
+        try {
+            VBox box = FXMLLoader.load(getClass().getResource("/view/fxml/sidemenu_notlogin.fxml"));
             drawer.setSidePane(box);
         } catch (IOException e) {
         }

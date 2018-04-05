@@ -7,9 +7,6 @@ package application;
 
 import controller.stage_controller.StageController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -21,7 +18,7 @@ public class ApplicationInitialization extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {        
         StageController login_stage = new StageController();
-        login_stage.configure_stage(primaryStage, "/view/fxml/login.fxml", "Minh Nhut Corporation", 1200, 800);
+        login_stage.configure_stage(primaryStage, "/view/fxml/home.fxml", "Minh Nhut Corporation", 1200, 800);
 
         primaryStage.show();
     }
