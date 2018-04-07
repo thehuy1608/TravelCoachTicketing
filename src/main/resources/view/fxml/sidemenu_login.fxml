@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to top, #6a11cb 0%, #2575fc 100%);" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.scene_controller.Sidemenu_loginSceneController">
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: linear-gradient(to top, #6a11cb 0%, #2575fc 100%);;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.scene_controller.Sidemenu_loginSceneController">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>

@@ -10,20 +10,22 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.scene_controller.LoginSceneController">
     <children>
         <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
-            <ImageView fitHeight="800" fitWidth="1200" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="800" fitWidth="1200" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@../image/PolygonBackground.png" />
+                    <Image url="@../image/LowPolyBackground-DarkGreen.png" />
                 </image>
             </ImageView>
         </AnchorPane>
         <AnchorPane fx:id="menuPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: white;">
             <children>
-                <JFXButton fx:id="btnMenu" contentDisplay="TOP" layoutY="-1.0" onAction="#toggle_side_menu" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="DANH MỤC" textAlignment="CENTER">
+                <JFXButton fx:id="btnMenu" contentDisplay="TOP" layoutY="-1.0" onAction="#toggle_side_menu" prefHeight="120.0" prefWidth="200.0" ripplerFill="#fffdf4" style="-fx-background-color: #fffdf4;" text="DANH MỤC" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>
@@ -35,7 +37,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" onAction="#home_button_action" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
+                <JFXButton fx:id="btnHome" contentDisplay="TOP" layoutX="200.0" onAction="#home_button_action" prefHeight="120.0" prefWidth="200.0" ripplerFill="#fffdf4" style="-fx-background-color: #fffdf4;" text="TRANG CHỦ" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>
@@ -47,7 +49,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnAbout" contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
+                <JFXButton fx:id="btnAbout" contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#fffdf4" style="-fx-background-color: #fffdf4;" text="GIỚI THIỆU" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>
@@ -59,7 +61,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnTicketing" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
+                <JFXButton fx:id="btnTicketing" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#fffdf4" style="-fx-background-color: #fffdf4;" text="ĐẶT VÉ" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>
@@ -71,7 +73,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
+                <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#fffdf4" style="-fx-background-color: #fffdf4;" text="TÌM KIẾM" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>
@@ -83,7 +85,7 @@
                         </ImageView>
                     </graphic>
                 </JFXButton>
-                <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
+                <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="#fffdf4" style="-fx-background-color: #fffdf4;" text="TRỢ GIÚP" textAlignment="CENTER">
                     <font>
                         <Font name="Roboto Regular" size="20.0" />
                     </font>
@@ -113,13 +115,21 @@
                         </Label>
                         <JFXTextField fx:id="txtUsername" layoutX="81.0" layoutY="172.0" prefHeight="31.0" prefWidth="351.0" />
                         <JFXPasswordField fx:id="txtPassword" layoutX="81.0" layoutY="295.0" prefHeight="31.0" prefWidth="351.0" />
-                        <JFXButton fx:id="btnLogin" layoutX="268.0" layoutY="398.0" onAction="#login_button_action" prefHeight="49.0" prefWidth="164.0" ripplerFill="#a44949" style="-fx-border-radius: 5PX; -fx-background-color: #ff6672;" text="ĐĂNG NHẬP" textFill="WHITE">
+                        <JFXButton fx:id="btnLogin" layoutX="268.0" layoutY="398.0" onAction="#login_button_action" prefHeight="49.0" prefWidth="164.0" style="-fx-border-radius: 5PX; -fx-background-color: b64926;" text="ĐĂNG NHẬP" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font size="16.0" />
                             </font>
                             <effect>
                                 <DropShadow blurType="ONE_PASS_BOX" color="#8a1c1c" offsetX="2.0" offsetY="2.0" spread="0.28" />
                             </effect>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
                         </JFXButton>
                         <Hyperlink fx:id="lblForgot" layoutX="305.0" layoutY="459.0" text="Quên mật khẩu?">
                             <font>
@@ -142,9 +152,6 @@
                             </font>
                         </Label>
                     </children>
-                    <effect>
-                        <DropShadow height="33.44" offsetX="2.0" offsetY="2.0" radius="14.665" width="27.22" />
-                    </effect>
                 </AnchorPane>
             </children>
         </AnchorPane>
