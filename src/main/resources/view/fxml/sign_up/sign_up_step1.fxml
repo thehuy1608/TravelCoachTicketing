@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -10,133 +9,137 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <AnchorPane prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: white;">
-         <children>
-            <JFXButton contentDisplay="TOP" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="DANH MỤC" textAlignment="CENTER">
-               <font>
-                  <Font name="Roboto Regular" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fx:id="btnMenu" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_Menu_48px_2.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
-               <font>
-                  <Font name="Roboto Regular" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fx:id="btnHome" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_Home_48px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
-               <font>
-                  <Font name="Roboto Regular" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fx:id="btnAbout" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_User_Account_48px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btnTicketling" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
-               <font>
-                  <Font name="Roboto Regular" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_New_Ticket_48px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
-               <font>
-                  <Font name="Roboto Regular" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_Search_48px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
-               <font>
-                  <Font name="Roboto Regular" size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_Help_48px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </AnchorPane>
-      <AnchorPane layoutY="126.0" prefHeight="674.0" prefWidth="1200.0" style="-fx-background-color: white;">
-         <children>
-            <Label layoutX="38.0" layoutY="35.0" text="Bước 1: Chọn cách thức đăng ký tài khoản:" textFill="#070e59">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <JFXButton fx:id="btnDirectlySignUp" layoutX="407.0" layoutY="201.0" prefHeight="60.0" prefWidth="387.0" ripplerFill="WHITE" style="-fx-background-color: #4086f7;" text="Đăng ký trực tiếp" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="btnGGSignUp" layoutX="407.0" layoutY="277.0" prefHeight="60.0" prefWidth="387.0" ripplerFill="WHITE" style="-fx-background-color: DE4B39;" text="Đăng ký bằng tài khoản Gmail" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_Google_48px_1.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <JFXButton fx:id="btnFBSignUp" layoutX="407.0" layoutY="352.0" prefHeight="60.0" prefWidth="387.0" ripplerFill="WHITE" style="-fx-background-color: #3B5999;" text="Đăng ký bằng tài khoản Facebook" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../icon/icons8_Facebook_48px_1.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-            <Label layoutX="1071.0" layoutY="598.0" text="Bước 1/4" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="1070.0" layoutY="618.0" style="-fx-text-fill: black;" text="Bước 4/4">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </children>
+    <children>
+        <AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+            
+            
+        </AnchorPane>
+        <AnchorPane prefHeight="120.0" prefWidth="1200.0" style="-fx-background-color: white;">
+            <children>
+                <JFXButton contentDisplay="TOP" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="DANH MỤC" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="btnMenu" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_Menu_48px_2.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton contentDisplay="TOP" layoutX="200.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRANG CHỦ" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="btnHome" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_Home_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton contentDisplay="TOP" layoutX="400.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="GIỚI THIỆU" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fx:id="btnAbout" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_User_Account_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnTicketling" contentDisplay="TOP" layoutX="600.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="ĐẶT VÉ" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_New_Ticket_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnSearch" contentDisplay="TOP" layoutX="800.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TÌM KIẾM" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_Search_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnHelp" contentDisplay="TOP" layoutX="1000.0" layoutY="-1.0" prefHeight="120.0" prefWidth="200.0" ripplerFill="WHITE" text="TRỢ GIÚP" textAlignment="CENTER">
+                    <font>
+                        <Font name="Roboto Regular" size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_Help_48px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+            </children>
+            <effect>
+                <DropShadow />
+            </effect>
+        </AnchorPane>
+        <AnchorPane layoutY="126.0" prefHeight="674.0" prefWidth="1200.0" style="-fx-background-color: white;">
+            <children>
+                <Label layoutX="38.0" layoutY="35.0" text="Bước 1: Chọn cách thức đăng ký tài khoản:" textFill="#193441">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+                <JFXButton fx:id="btnDirectlySignUp" layoutX="407.0" layoutY="201.0" prefHeight="60.0" prefWidth="387.0" ripplerFill="WHITE" style="-fx-background-color: #1DA1F2;" text="Đăng ký trực tiếp" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="btnGGSignUp" layoutX="407.0" layoutY="277.0" prefHeight="60.0" prefWidth="387.0" ripplerFill="WHITE" style="-fx-background-color: #DB4437;" text="Đăng ký bằng tài khoản Gmail" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_Google_48px_1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnFBSignUp" layoutX="407.0" layoutY="352.0" prefHeight="60.0" prefWidth="387.0" ripplerFill="WHITE" style="-fx-background-color: #3B5998;" text="Đăng ký bằng tài khoản Facebook" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../icon/icons8_Facebook_48px_1.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <Label layoutX="1071.0" layoutY="598.0" text="Bước 1/4" textFill="WHITE">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Label layoutX="1070.0" layoutY="618.0" text="Bước 1/4" textFill="#3e606f">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>

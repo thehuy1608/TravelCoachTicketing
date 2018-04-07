@@ -24,7 +24,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_Menu_48px_2.png" />
+                        <Image url="@../../icon/icons8_Menu_48px_2.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -36,7 +36,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_Home_48px.png" />
+                        <Image url="@../../icon/icons8_Home_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -48,7 +48,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_User_Account_48px.png" />
+                        <Image url="@../../icon/icons8_User_Account_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -60,7 +60,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_New_Ticket_48px.png" />
+                        <Image url="@../../icon/icons8_New_Ticket_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -72,7 +72,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_Search_48px.png" />
+                        <Image url="@../../icon/icons8_Search_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -84,7 +84,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_Help_48px.png" />
+                        <Image url="@../../icon/icons8_Help_48px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -96,7 +96,7 @@
       </AnchorPane>
       <AnchorPane layoutY="126.0" prefHeight="674.0" prefWidth="1200.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="38.0" layoutY="35.0" text="Bước 3: Cập nhật thông tin cá nhân" textFill="#070e59">
+            <Label layoutX="38.0" layoutY="35.0" text="Bước 3: Cập nhật thông tin cá nhân" textFill="#193441">
                <font>
                   <Font size="30.0" />
                </font>
@@ -129,14 +129,14 @@
                </font>
             </Label>
             <TextField fx:id="txtAddress" layoutX="408.0" layoutY="541.0" prefHeight="45.0" prefWidth="387.0" style="-fx-border-radius: 60;" />
-            <JFXButton fx:id="btnBack" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="247.0" prefHeight="87.0" prefWidth="87.0" style="-fx-background-color: #4086f7; -fx-background-radius: 50px;" text=" " textFill="WHITE">
+            <JFXButton fx:id="btnBack" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="247.0" prefHeight="87.0" prefWidth="87.0" style="-fx-background-color: #3e606f; -fx-background-radius: 50px;" text=" " textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_Back_52px.png" />
+                        <Image url="@../../icon/icons8_Back_52px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -144,14 +144,14 @@
                   <Insets right="18.0" />
                </padding>
             </JFXButton>
-            <JFXButton fx:id="btnNext" alignment="CENTER_RIGHT" layoutX="1052.0" layoutY="247.0" prefHeight="87.0" prefWidth="87.0" style="-fx-background-color: #4086f7; -fx-background-radius: 50px;" text=" " textFill="WHITE">
+            <JFXButton fx:id="btnNext" alignment="CENTER_RIGHT" layoutX="1052.0" layoutY="247.0" prefHeight="87.0" prefWidth="87.0" style="-fx-background-color: #3e606f; -fx-background-radius: 50px;" text=" " textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../icon/icons8_Forward_52px.png" />
+                        <Image url="@../../icon/icons8_Forward_52px.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -178,7 +178,7 @@
                </font>
             </RadioButton>
             <DatePicker fx:id="txtBirthday" layoutX="410.0" layoutY="350.0" prefHeight="45.0" prefWidth="387.0" />
-            <Label layoutX="1071.0" layoutY="612.0" style="-fx-text-fill: black;" text="Bước 3/4">
+            <Label layoutX="1071.0" layoutY="612.0" text="Bước 3/4" textFill="#3e606f">
                <font>
                   <Font size="18.0" />
                </font>
