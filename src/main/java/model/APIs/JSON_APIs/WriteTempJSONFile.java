@@ -15,7 +15,9 @@ import java.io.UnsupportedEncodingException;
 import java.nio.file.Files;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.crypto.CipherOutputStream;
 import model.APIs.JSON_APIs.DAO.UserData;
+import model.APIs.SecurityAPIs.Encryption;
 
 /**
  * Write temporary JSON file that will store the shared data among scenes of
@@ -64,16 +66,16 @@ public class WriteTempJSONFile {
     public static void write_user_data_object(JsonWriter writer, UserData user_data) {
         try {
             writer.beginObject();
-            writer.name("Is Logged In").value(user_data.get_logged_in());
-            writer.name("User ID");
+            writer.name("is_logged_in").value(user_data.get_logged_in());
+            writer.name("user_id");
             if (user_data.get_user_id() == null) {
                 writer.nullValue();
             } else {
                 write_byte_array(writer, user_data.get_user_id());
             }
 
-            writer.name("Account Type").value(user_data.get_user_type());
-            writer.name("Current Scene").value(user_data.get_current_scene());
+            writer.name("user_type").value(user_data.get_user_type());
+            writer.name("current_scene").value(user_data.get_current_scene());
             writer.endObject();
         } catch (IOException ex) {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
@@ -100,7 +102,7 @@ public class WriteTempJSONFile {
     }
 
     /**
-     * Write User object to the JSON file.
+     * Write User object to the JSON file with AES encryption.
      *
      * @param user_data
      */
@@ -109,9 +111,10 @@ public class WriteTempJSONFile {
             String path = System.getProperty("user.home") + File.separator + "Documents" + File.separator + "TravelBusTicketing" + File.separator + "User.json";
             File json_file = new File(path);
             Files.deleteIfExists(json_file.toPath());
-            if (json_file.createNewFile()) {
-                FileOutputStream fos = new FileOutputStream(json_file);
-                write_JSON_user_data_stream(fos, user_data);
+            if (json_file.createNewFile()) {               
+                FileOutputStream fos = new FileOutputStream(json_file);                
+                CipherOutputStream cos = new CipherOutputStream(fos, Encryption.get_encrypt_cipher());
+                write_JSON_user_data_stream(cos, user_data);
                 System.out.println("Data has been added.");
             } else {
                 System.out.println("Unknown Error");
@@ -119,5 +122,10 @@ public class WriteTempJSONFile {
         } catch (IOException ex) {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    public static void main(String[] args) {
+        UserData user_data = new UserData(false, Encryption.encrypt_AES("1"), "Thế Huy Nguyễn", "home");
+        write_JSON_user_data_file(user_data);
     }
 }

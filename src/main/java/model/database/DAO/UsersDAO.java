@@ -34,9 +34,4 @@ public class UsersDAO {
         hibernate_session.close();
         return null;
     }
-    
-    public static void main(String[] args) {
-        Users user = get_user_by_user_id(1);
-        System.out.println(user.getUserId());
-    }
 }

@@ -5,16 +5,25 @@
  */
 package model.APIs.JSON_APIs.DAO;
 
+import java.io.Serializable;
+
 /**
- *
+ *Used to store the shared data needed for application
  * @author User
  */
-public class UserData {
+public class UserData implements Serializable{
     private final boolean is_logged_in;
     private final byte[] user_id;
     private final String user_type;
     private final String current_scene;
 
+    /**
+     *Construct a UserData object
+     * @param is_logged_in
+     * @param user_id
+     * @param user_type
+     * @param current_scene
+     */
     public UserData(boolean is_logged_in, byte[] user_id, String user_type, String current_scene) {
         this.is_logged_in = is_logged_in;
         this.user_id = user_id;

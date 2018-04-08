@@ -70,6 +70,8 @@ public class HomeSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        //Add loading anchor pane to home scene and bring it to front while processing data from JSON file
         loading_anchor_pane = new LoadingAnchorPane();
         try {
             loading_anchor_pane.configure_pane(1200, 800, "#000000", 0.8);
@@ -82,6 +84,7 @@ public class HomeSceneController implements Initializable {
         Task load_user_data_after_login = new Task<Boolean>() {
             @Override
             protected Boolean call() throws Exception {
+                //Read the data from JSON file and add necessary data to Scene
                 user_data = ReadTempJSONFile.read_JSON_user_data_file();
                 return true;
             }
@@ -92,7 +95,7 @@ public class HomeSceneController implements Initializable {
         thread.start();
 
         load_user_data_after_login.setOnSucceeded((Event event) -> {
-            //Add side-menu
+            //Add different side menu based on whether user is logged in or not
             if (user_data.get_logged_in()) {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/fxml/sidemenu_login.fxml"));

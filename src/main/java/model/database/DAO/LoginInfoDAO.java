@@ -7,7 +7,6 @@ package model.database.DAO;
 
 import java.util.List;
 import model.APIs.SecurityAPIs.Encryption;
-import model.database.POJO.LoginInfo;
 import model.database.POJO.Users;
 import model.database.hibernate.HibernateUtil;
 import org.hibernate.Query;
@@ -51,6 +50,12 @@ public class LoginInfoDAO {
         return 0;
     }
 
+    /**
+     *Get the user by user's login name and password
+     * @param login_name
+     * @param login_password
+     * @return
+     */
     public static Users get_user_by_login_name_and_password(String login_name, String login_password) {
         Users user = null;
         Session hibernate_session = HibernateUtil.getSessionFactory().openSession();
