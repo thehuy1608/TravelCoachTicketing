@@ -137,7 +137,7 @@
                         <Font size="18.0" />
                     </font>
                 </Label>
-                <JFXButton fx:id="btnToStep3" layoutX="678.0" layoutY="521.0" prefHeight="60.0" prefWidth="171.0" ripplerFill="#4086f7" style="-fx-background-color: #4086f7;" text="Tạo tài khoản" textFill="WHITE">
+                <JFXButton fx:id="btnToStep3" layoutX="678.0" layoutY="521.0" onAction="#go_to_step_3_button_action" prefHeight="60.0" prefWidth="171.0" ripplerFill="#4086f7" style="-fx-background-color: #4086f7;" text="Tạo tài khoản" textFill="WHITE">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -193,7 +193,7 @@
                   <Image url="@../../icon/attention-sign-outline.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="btnToStep3_Side" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="1072.0" layoutY="20.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3e606f" style="-fx-background-color: #3e606f; -fx-background-radius: 50px;" text="&gt;" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+            <JFXButton fx:id="btnToStep3_Side" alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="1072.0" layoutY="20.0" onAction="#go_to_step_3_button_action" prefHeight="60.0" prefWidth="60.0" ripplerFill="#3e606f" style="-fx-background-color: #3e606f; -fx-background-radius: 50px;" text="&gt;" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
                <font>
                   <Font name="System Bold" size="27.0" />
                </font>
