@@ -123,9 +123,4 @@ public class WriteTempJSONFile {
             Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    public static void main(String[] args) {
-        UserData user_data = new UserData(false, Encryption.encrypt_AES("1"), "Thế Huy Nguyễn", "home");
-        write_JSON_user_data_file(user_data);
-    }
 }

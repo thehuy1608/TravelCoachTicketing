@@ -249,8 +249,8 @@ public class LoginSceneController implements Initializable {
             //If the login is valid, redirect to the home page, otherwise display an error message.
             if (is_valid_login > 0) {
                 try {
-                    StageController home_stage = new StageController();
-                    home_stage.configure_stage(current_stage, "/view/fxml/home.fxml", "Minh Nhut Corporation", 1200, 800);
+                    StageController stage_controller = new StageController();
+                    stage_controller.configure_stage(current_stage, "/view/fxml/home.fxml", "Minh Nhut Corporation", 1200, 800);
                     current_stage.show();
                 } catch (IOException ex) {
                     Logger.getLogger(LoginSceneController.class.getName()).log(Level.SEVERE, null, ex);
@@ -272,21 +272,26 @@ public class LoginSceneController implements Initializable {
         });
     }
 
+
+     //Button action for btnMenu
+    //Toggle side menu when click on btnMenu on the horizontal menu bar
+    @FXML
+    private void toggle_side_menu() {
+        drawer.toggle();
+    }
+        
+    //Button action for btnHome
+    //Display home scene when click on btnHome on the horizontal menu bar
     @FXML
     private void home_button_action() {
         try {
-            Stage current_stage = (Stage) btnLogin.getScene().getWindow();
+            Stage current_stage = (Stage) btnHome.getScene().getWindow();
             StageController home_stage = new StageController();
             home_stage.configure_stage(current_stage, "/view/fxml/home.fxml", "Minh Nhut Corporation", 1200, 800);
             current_stage.show();
         } catch (IOException ex) {
             Logger.getLogger(LoginSceneController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-
-    @FXML
-    private void toggle_side_menu() {
-        drawer.toggle();
     }
 
 }

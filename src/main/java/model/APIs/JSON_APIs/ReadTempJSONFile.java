@@ -62,12 +62,4 @@ public class ReadTempJSONFile implements Serializable {
         }
         return byte_array;
     }
-
-    public static void main(String[] args) {
-        UserData user_data = read_JSON_user_data_file();
-        System.out.println(user_data.get_current_scene());
-        System.out.println(user_data.get_logged_in());
-        System.out.println(user_data.get_user_type());
-        System.out.println(Encryption.decrypt_AES(user_data.get_user_id()));
-    }
 }

@@ -80,6 +80,7 @@ public class HomeSceneController implements Initializable {
         }
         rootPane.getChildren().add(loading_anchor_pane);
         loading_anchor_pane.toFront();
+        loading_anchor_pane.setCursor(Cursor.WAIT);
 
         Task load_user_data_after_login = new Task<Boolean>() {
             @Override
@@ -133,6 +134,8 @@ public class HomeSceneController implements Initializable {
         });
     }
 
+    //Button action for btnMenu
+    //Toggle side menu when click on btnMenu on the horizontal menu bar
     @FXML
     private void toggle_side_menu() {
         drawer.toggle();
