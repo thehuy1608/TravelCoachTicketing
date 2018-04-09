@@ -137,7 +137,7 @@ public class Sign_up_step2_SceneController implements Initializable {
         txtAccount.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if (!newValue) {
                 //TO-DO when account field is lost focused
-                String account_text = txtAccount.getText();
+                String account_text = txtAccount.getText().trim();
                 validate_username_field(account_text);
             } else {
                 //TO-DO when account field is focused
@@ -151,7 +151,7 @@ public class Sign_up_step2_SceneController implements Initializable {
         txtEmail.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if (!newValue) {
                 //TO-DO when email field is lost focused
-                String email = txtEmail.getText();
+                String email = txtEmail.getText().trim();
                 validate_email_field(email);
             } else {
                 //TO-DO when email field is focused

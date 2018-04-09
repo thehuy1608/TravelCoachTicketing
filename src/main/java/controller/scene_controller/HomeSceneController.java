@@ -23,7 +23,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import model.APIs.JSON_APIs.DAO.UserData;
-import model.APIs.JSON_APIs.ReadTempJSONFile;
+import model.APIs.JSON_APIs.ReadInitialDataJSON;
 import model.APIs.SecurityAPIs.Encryption;
 
 /**
@@ -86,7 +86,7 @@ public class HomeSceneController implements Initializable {
             @Override
             protected Boolean call() throws Exception {
                 //Read the data from JSON file and add necessary data to Scene
-                user_data = ReadTempJSONFile.read_JSON_user_data_file();
+                user_data = ReadInitialDataJSON.read_JSON_user_data_file();
                 return true;
             }
         };

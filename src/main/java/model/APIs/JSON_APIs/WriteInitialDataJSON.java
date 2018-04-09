@@ -25,7 +25,7 @@ import model.APIs.SecurityAPIs.Encryption;
  *
  * @author User
  */
-public class WriteTempJSONFile {
+public class WriteInitialDataJSON {
 
     /**
      * Make a directory in User Document directory to store JSON file.
@@ -78,7 +78,7 @@ public class WriteTempJSONFile {
             writer.name("current_scene").value(user_data.get_current_scene());
             writer.endObject();
         } catch (IOException ex) {
-            Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WriteInitialDataJSON.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -95,9 +95,9 @@ public class WriteTempJSONFile {
             writer.setHtmlSafe(true);
             write_user_data_object(writer, user_data);
         } catch (UnsupportedEncodingException ex) {
-            Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WriteInitialDataJSON.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WriteInitialDataJSON.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -120,7 +120,7 @@ public class WriteTempJSONFile {
                 System.out.println("Unknown Error");
             }
         } catch (IOException ex) {
-            Logger.getLogger(WriteTempJSONFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WriteInitialDataJSON.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

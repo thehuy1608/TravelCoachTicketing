@@ -39,7 +39,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.APIs.JSON_APIs.DAO.UserData;
-import model.APIs.JSON_APIs.WriteTempJSONFile;
+import model.APIs.JSON_APIs.WriteInitialDataJSON;
 import model.APIs.SecurityAPIs.Encryption;
 import model.APIs.ValidateAPIs.ValidateInput;
 import model.database.DAO.LoginInfoDAO;
@@ -233,7 +233,7 @@ public class LoginSceneController implements Initializable {
                     String next_scene = "home";
 
                     UserData user_data = new UserData(is_logged_in, hash_user_id, account_type, next_scene);
-                    WriteTempJSONFile.write_JSON_user_data_file(user_data);
+                    WriteInitialDataJSON.write_JSON_user_data_file(user_data);
                 }
                 return null;
             }

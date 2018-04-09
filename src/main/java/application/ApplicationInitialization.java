@@ -10,7 +10,7 @@ import java.io.File;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.APIs.JSON_APIs.DAO.UserData;
-import model.APIs.JSON_APIs.WriteTempJSONFile;
+import model.APIs.JSON_APIs.WriteInitialDataJSON;
 import model.APIs.SecurityAPIs.Encryption;
 
 /**
@@ -25,7 +25,7 @@ public class ApplicationInitialization extends Application {
             create_initial_JSON_file();
         }
         StageController login_stage = new StageController();
-        login_stage.configure_stage(primaryStage, "/view/fxml/sign_up/sign_up_step1.fxml", "Minh Nhut Corporation", 1200, 800);
+        login_stage.configure_stage(primaryStage, "/view/fxml/sign_up/sign_up_step3.fxml", "Minh Nhut Corporation", 1200, 800);
 
         primaryStage.show();
     }
@@ -49,7 +49,7 @@ public class ApplicationInitialization extends Application {
         String current_scene = "index";
         UserData user_data = new UserData(is_logged_in, hash_user_id, user_type, current_scene);
         
-        WriteTempJSONFile.write_JSON_user_data_file(user_data); 
+        WriteInitialDataJSON.write_JSON_user_data_file(user_data); 
     }
     
     /**

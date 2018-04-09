@@ -23,7 +23,7 @@ import model.APIs.SecurityAPIs.Encryption;
  *
  * @author User
  */
-public class ReadTempJSONFile implements Serializable {
+public class ReadInitialDataJSON implements Serializable {
 
     /**
      * Read the UserData object in JSON file from input stream.
