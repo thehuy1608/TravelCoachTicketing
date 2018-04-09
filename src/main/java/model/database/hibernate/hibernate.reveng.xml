@@ -40,27 +40,28 @@ made subject to such option by the copyright holder.
 Contributor(s):
 -->
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="TravelCoachTicketing"/>
-  <table-filter match-name="UserGoogleAccount"/>
-  <table-filter match-name="Ticket"/>
-  <table-filter match-name="LoginInfo"/>
-  <table-filter match-name="SpecialPromotion"/>
-  <table-filter match-name="Line"/>
-  <table-filter match-name="Country"/>
-  <table-filter match-name="Station"/>
-  <table-filter match-name="Invoice"/>
-  <table-filter match-name="UserInfo"/>
-  <table-filter match-name="CityOrDistrict"/>
-  <table-filter match-name="Users"/>
-  <table-filter match-name="Coach"/>
-  <table-filter match-name="UserTripLog"/>
-  <table-filter match-name="UserFacebookAccount"/>
-  <table-filter match-name="UserPaymentInfo"/>
-  <table-filter match-name="Role"/>
-  <table-filter match-name="InvoiceLineItem"/>
-  <table-filter match-name="Schedule"/>
-  <table-filter match-name="Driver"/>
-  <table-filter match-name="Trip"/>
-  <table-filter match-name="TripStatus"/>
-  <table-filter match-name="Coach_Driver_Trip"/>
+  <schema-selection match-catalog="travelcoachticketing"/>
+  <table-filter match-name="usertriplog"/>
+  <table-filter match-name="role"/>
+  <table-filter match-name="coach"/>
+  <table-filter match-name="station"/>
+  <table-filter match-name="trip"/>
+  <table-filter match-name="line"/>
+  <table-filter match-name="coach_driver_trip"/>
+  <table-filter match-name="userpaymentinfo"/>
+  <table-filter match-name="specialpromotion"/>
+  <table-filter match-name="logininfo"/>
+  <table-filter match-name="ticket"/>
+  <table-filter match-name="schedule"/>
+  <table-filter match-name="cityordistrict"/>
+  <table-filter match-name="country"/>
+  <table-filter match-name="users"/>
+  <table-filter match-name="usergoogleaccount"/>
+  <table-filter match-name="userfacebookaccount"/>
+  <table-filter match-name="seat"/>
+  <table-filter match-name="driver"/>
+  <table-filter match-name="tripstatus"/>
+  <table-filter match-name="invoice"/>
+  <table-filter match-name="userinfo"/>
+  <table-filter match-name="invoicelineitem"/>
 </hibernate-reverse-engineering>

@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,7 +15,7 @@ public class Country  implements java.io.Serializable {
      private Integer countryId;
      private String countryName;
      private Date modifiedDate;
-     private Set<CityOrDistrict> cityOrDistricts = new HashSet<CityOrDistrict>(0);
+     private Set<Cityordistrict> cityordistricts = new HashSet<Cityordistrict>(0);
 
     public Country() {
     }
@@ -25,10 +25,10 @@ public class Country  implements java.io.Serializable {
         this.countryName = countryName;
         this.modifiedDate = modifiedDate;
     }
-    public Country(String countryName, Date modifiedDate, Set<CityOrDistrict> cityOrDistricts) {
+    public Country(String countryName, Date modifiedDate, Set<Cityordistrict> cityordistricts) {
        this.countryName = countryName;
        this.modifiedDate = modifiedDate;
-       this.cityOrDistricts = cityOrDistricts;
+       this.cityordistricts = cityordistricts;
     }
    
     public Integer getCountryId() {
@@ -52,12 +52,12 @@ public class Country  implements java.io.Serializable {
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-    public Set<CityOrDistrict> getCityOrDistricts() {
-        return this.cityOrDistricts;
+    public Set<Cityordistrict> getCityordistricts() {
+        return this.cityordistricts;
     }
     
-    public void setCityOrDistricts(Set<CityOrDistrict> cityOrDistricts) {
-        this.cityOrDistricts = cityOrDistricts;
+    public void setCityordistricts(Set<Cityordistrict> cityordistricts) {
+        this.cityordistricts = cityordistricts;
     }
 
 

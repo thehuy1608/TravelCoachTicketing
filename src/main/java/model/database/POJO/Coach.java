@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,6 +19,7 @@ public class Coach  implements java.io.Serializable {
      private Date modifiedDate;
      private byte numberOfSeats;
      private byte isOnTrip;
+     private Set<Seat> seats = new HashSet<Seat>(0);
      private Set<CoachDriverTrip> coachDriverTrips = new HashSet<CoachDriverTrip>(0);
 
     public Coach() {
@@ -32,13 +33,14 @@ public class Coach  implements java.io.Serializable {
         this.numberOfSeats = numberOfSeats;
         this.isOnTrip = isOnTrip;
     }
-    public Coach(String coachName, String numberPlate, String coachDescription, Date modifiedDate, byte numberOfSeats, byte isOnTrip, Set<CoachDriverTrip> coachDriverTrips) {
+    public Coach(String coachName, String numberPlate, String coachDescription, Date modifiedDate, byte numberOfSeats, byte isOnTrip, Set<Seat> seats, Set<CoachDriverTrip> coachDriverTrips) {
        this.coachName = coachName;
        this.numberPlate = numberPlate;
        this.coachDescription = coachDescription;
        this.modifiedDate = modifiedDate;
        this.numberOfSeats = numberOfSeats;
        this.isOnTrip = isOnTrip;
+       this.seats = seats;
        this.coachDriverTrips = coachDriverTrips;
     }
    
@@ -90,6 +92,13 @@ public class Coach  implements java.io.Serializable {
     
     public void setIsOnTrip(byte isOnTrip) {
         this.isOnTrip = isOnTrip;
+    }
+    public Set<Seat> getSeats() {
+        return this.seats;
+    }
+    
+    public void setSeats(Set<Seat> seats) {
+        this.seats = seats;
     }
     public Set<CoachDriverTrip> getCoachDriverTrips() {
         return this.coachDriverTrips;

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.database.POJO.Driver" table="Driver" optimistic-lock="version">
+    <class name="model.database.POJO.Driver" table="driver" catalog="travelcoachticketing" optimistic-lock="version">
         <id name="driverId" type="java.lang.Integer">
             <column name="DriverID" />
             <generator class="identity" />
@@ -17,8 +17,8 @@
         <property name="driverAddress" type="string">
             <column name="DriverAddress" length="100" not-null="true" />
         </property>
-        <property name="description" type="string">
-            <column name="Description" length="50" />
+        <property name="driverDescription" type="string">
+            <column name="DriverDescription" length="50" />
         </property>
         <property name="modifiedDate" type="date">
             <column name="ModifiedDate" length="10" not-null="true" />
@@ -26,15 +26,15 @@
         <property name="isOnTrip" type="byte">
             <column name="IsOnTrip" not-null="true" />
         </property>
-        <set name="coachDriverTripsForFkDriverId" table="Coach_Driver_Trip" inverse="true" lazy="true" fetch="select">
+        <set name="coachDriverTripsForFkSubDriverId" table="coach_driver_trip" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="FK_DriverID" not-null="true" />
+                <column name="FK_Sub_DriverID" />
             </key>
             <one-to-many class="model.database.POJO.CoachDriverTrip" />
         </set>
-        <set name="coachDriverTripsForFkSubDriverId" table="Coach_Driver_Trip" inverse="true" lazy="true" fetch="select">
+        <set name="coachDriverTripsForFkDriverId" table="coach_driver_trip" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="FK_Sub_DriverID" />
+                <column name="FK_DriverID" not-null="true" />
             </key>
             <one-to-many class="model.database.POJO.CoachDriverTrip" />
         </set>

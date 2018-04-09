@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,8 +13,8 @@ public class Line  implements java.io.Serializable {
 
 
      private Integer lineId;
-     private Station stationByDestinationStationId;
      private Station stationByDepartureStationId;
+     private Station stationByDestinationStationId;
      private String lineName;
      private String lineDescription;
      private Date modifiedDate;
@@ -24,15 +24,15 @@ public class Line  implements java.io.Serializable {
     }
 
 	
-    public Line(Station stationByDestinationStationId, Station stationByDepartureStationId, String lineName, Date modifiedDate) {
-        this.stationByDestinationStationId = stationByDestinationStationId;
+    public Line(Station stationByDepartureStationId, Station stationByDestinationStationId, String lineName, Date modifiedDate) {
         this.stationByDepartureStationId = stationByDepartureStationId;
+        this.stationByDestinationStationId = stationByDestinationStationId;
         this.lineName = lineName;
         this.modifiedDate = modifiedDate;
     }
-    public Line(Station stationByDestinationStationId, Station stationByDepartureStationId, String lineName, String lineDescription, Date modifiedDate, Set<Trip> trips) {
-       this.stationByDestinationStationId = stationByDestinationStationId;
+    public Line(Station stationByDepartureStationId, Station stationByDestinationStationId, String lineName, String lineDescription, Date modifiedDate, Set<Trip> trips) {
        this.stationByDepartureStationId = stationByDepartureStationId;
+       this.stationByDestinationStationId = stationByDestinationStationId;
        this.lineName = lineName;
        this.lineDescription = lineDescription;
        this.modifiedDate = modifiedDate;
@@ -46,19 +46,19 @@ public class Line  implements java.io.Serializable {
     public void setLineId(Integer lineId) {
         this.lineId = lineId;
     }
-    public Station getStationByDestinationStationId() {
-        return this.stationByDestinationStationId;
-    }
-    
-    public void setStationByDestinationStationId(Station stationByDestinationStationId) {
-        this.stationByDestinationStationId = stationByDestinationStationId;
-    }
     public Station getStationByDepartureStationId() {
         return this.stationByDepartureStationId;
     }
     
     public void setStationByDepartureStationId(Station stationByDepartureStationId) {
         this.stationByDepartureStationId = stationByDepartureStationId;
+    }
+    public Station getStationByDestinationStationId() {
+        return this.stationByDestinationStationId;
+    }
+    
+    public void setStationByDestinationStationId(Station stationByDestinationStationId) {
+        this.stationByDestinationStationId = stationByDestinationStationId;
     }
     public String getLineName() {
         return this.lineName;

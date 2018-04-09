@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -16,11 +16,11 @@ public class Driver  implements java.io.Serializable {
      private String driverName;
      private byte driverAge;
      private String driverAddress;
-     private String description;
+     private String driverDescription;
      private Date modifiedDate;
      private byte isOnTrip;
-     private Set<CoachDriverTrip> coachDriverTripsForFkDriverId = new HashSet<CoachDriverTrip>(0);
      private Set<CoachDriverTrip> coachDriverTripsForFkSubDriverId = new HashSet<CoachDriverTrip>(0);
+     private Set<CoachDriverTrip> coachDriverTripsForFkDriverId = new HashSet<CoachDriverTrip>(0);
 
     public Driver() {
     }
@@ -33,15 +33,15 @@ public class Driver  implements java.io.Serializable {
         this.modifiedDate = modifiedDate;
         this.isOnTrip = isOnTrip;
     }
-    public Driver(String driverName, byte driverAge, String driverAddress, String description, Date modifiedDate, byte isOnTrip, Set<CoachDriverTrip> coachDriverTripsForFkDriverId, Set<CoachDriverTrip> coachDriverTripsForFkSubDriverId) {
+    public Driver(String driverName, byte driverAge, String driverAddress, String driverDescription, Date modifiedDate, byte isOnTrip, Set<CoachDriverTrip> coachDriverTripsForFkSubDriverId, Set<CoachDriverTrip> coachDriverTripsForFkDriverId) {
        this.driverName = driverName;
        this.driverAge = driverAge;
        this.driverAddress = driverAddress;
-       this.description = description;
+       this.driverDescription = driverDescription;
        this.modifiedDate = modifiedDate;
        this.isOnTrip = isOnTrip;
-       this.coachDriverTripsForFkDriverId = coachDriverTripsForFkDriverId;
        this.coachDriverTripsForFkSubDriverId = coachDriverTripsForFkSubDriverId;
+       this.coachDriverTripsForFkDriverId = coachDriverTripsForFkDriverId;
     }
    
     public Integer getDriverId() {
@@ -72,12 +72,12 @@ public class Driver  implements java.io.Serializable {
     public void setDriverAddress(String driverAddress) {
         this.driverAddress = driverAddress;
     }
-    public String getDescription() {
-        return this.description;
+    public String getDriverDescription() {
+        return this.driverDescription;
     }
     
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDriverDescription(String driverDescription) {
+        this.driverDescription = driverDescription;
     }
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -93,19 +93,19 @@ public class Driver  implements java.io.Serializable {
     public void setIsOnTrip(byte isOnTrip) {
         this.isOnTrip = isOnTrip;
     }
-    public Set<CoachDriverTrip> getCoachDriverTripsForFkDriverId() {
-        return this.coachDriverTripsForFkDriverId;
-    }
-    
-    public void setCoachDriverTripsForFkDriverId(Set<CoachDriverTrip> coachDriverTripsForFkDriverId) {
-        this.coachDriverTripsForFkDriverId = coachDriverTripsForFkDriverId;
-    }
     public Set<CoachDriverTrip> getCoachDriverTripsForFkSubDriverId() {
         return this.coachDriverTripsForFkSubDriverId;
     }
     
     public void setCoachDriverTripsForFkSubDriverId(Set<CoachDriverTrip> coachDriverTripsForFkSubDriverId) {
         this.coachDriverTripsForFkSubDriverId = coachDriverTripsForFkSubDriverId;
+    }
+    public Set<CoachDriverTrip> getCoachDriverTripsForFkDriverId() {
+        return this.coachDriverTripsForFkDriverId;
+    }
+    
+    public void setCoachDriverTripsForFkDriverId(Set<CoachDriverTrip> coachDriverTripsForFkDriverId) {
+        this.coachDriverTripsForFkDriverId = coachDriverTripsForFkDriverId;
     }
 
 

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.database.POJO.Ticket" table="Ticket" optimistic-lock="version">
+    <class name="model.database.POJO.Ticket" table="ticket" catalog="travelcoachticketing" optimistic-lock="version">
         <id name="ticketId" type="java.lang.Integer">
             <column name="TicketID" />
             <generator class="identity" />
@@ -26,11 +26,11 @@
         <property name="modifiedDate" type="date">
             <column name="ModifiedDate" length="10" not-null="true" />
         </property>
-        <set name="invoiceLineItems" table="InvoiceLineItem" inverse="true" lazy="true" fetch="select">
+        <set name="invoicelineitems" table="invoicelineitem" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="FK_TicketID" not-null="true" />
             </key>
-            <one-to-many class="model.database.POJO.InvoiceLineItem" />
+            <one-to-many class="model.database.POJO.Invoicelineitem" />
         </set>
     </class>
 </hibernate-mapping>

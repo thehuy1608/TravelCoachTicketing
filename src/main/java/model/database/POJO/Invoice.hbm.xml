@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.database.POJO.Invoice" table="Invoice" optimistic-lock="version">
+    <class name="model.database.POJO.Invoice" table="invoice" catalog="travelcoachticketing" optimistic-lock="version">
         <id name="invoiceId" type="java.lang.Integer">
             <column name="InvoiceID" />
             <generator class="identity" />
         </id>
-        <many-to-one name="specialPromotion" class="model.database.POJO.SpecialPromotion" fetch="select">
+        <many-to-one name="specialpromotion" class="model.database.POJO.Specialpromotion" fetch="select">
             <column name="FK_PromotionID" />
         </many-to-one>
         <many-to-one name="users" class="model.database.POJO.Users" fetch="select">
@@ -29,17 +29,17 @@
         <property name="invoiceStatus" type="string">
             <column name="InvoiceStatus" length="20" not-null="true" />
         </property>
-        <set name="userTripLogs" table="UserTripLog" inverse="true" lazy="true" fetch="select">
+        <set name="usertriplogs" table="usertriplog" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="FK_InvoiceID" not-null="true" />
             </key>
-            <one-to-many class="model.database.POJO.UserTripLog" />
+            <one-to-many class="model.database.POJO.Usertriplog" />
         </set>
-        <set name="invoiceLineItems" table="InvoiceLineItem" inverse="true" lazy="true" fetch="select">
+        <set name="invoicelineitems" table="invoicelineitem" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="FK_InvoiceID" not-null="true" />
             </key>
-            <one-to-many class="model.database.POJO.InvoiceLineItem" />
+            <one-to-many class="model.database.POJO.Invoicelineitem" />
         </set>
     </class>
 </hibernate-mapping>

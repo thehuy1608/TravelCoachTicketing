@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,8 +12,8 @@ public class CoachDriverTrip  implements java.io.Serializable {
 
      private Integer id;
      private Coach coach;
-     private Driver driverByFkDriverId;
      private Driver driverByFkSubDriverId;
+     private Driver driverByFkDriverId;
      private Trip trip;
      private String description;
      private Date modifiedDate;
@@ -29,10 +29,10 @@ public class CoachDriverTrip  implements java.io.Serializable {
         this.description = description;
         this.modifiedDate = modifiedDate;
     }
-    public CoachDriverTrip(Coach coach, Driver driverByFkDriverId, Driver driverByFkSubDriverId, Trip trip, String description, Date modifiedDate) {
+    public CoachDriverTrip(Coach coach, Driver driverByFkSubDriverId, Driver driverByFkDriverId, Trip trip, String description, Date modifiedDate) {
        this.coach = coach;
-       this.driverByFkDriverId = driverByFkDriverId;
        this.driverByFkSubDriverId = driverByFkSubDriverId;
+       this.driverByFkDriverId = driverByFkDriverId;
        this.trip = trip;
        this.description = description;
        this.modifiedDate = modifiedDate;
@@ -52,19 +52,19 @@ public class CoachDriverTrip  implements java.io.Serializable {
     public void setCoach(Coach coach) {
         this.coach = coach;
     }
-    public Driver getDriverByFkDriverId() {
-        return this.driverByFkDriverId;
-    }
-    
-    public void setDriverByFkDriverId(Driver driverByFkDriverId) {
-        this.driverByFkDriverId = driverByFkDriverId;
-    }
     public Driver getDriverByFkSubDriverId() {
         return this.driverByFkSubDriverId;
     }
     
     public void setDriverByFkSubDriverId(Driver driverByFkSubDriverId) {
         this.driverByFkSubDriverId = driverByFkSubDriverId;
+    }
+    public Driver getDriverByFkDriverId() {
+        return this.driverByFkDriverId;
+    }
+    
+    public void setDriverByFkDriverId(Driver driverByFkDriverId) {
+        this.driverByFkDriverId = driverByFkDriverId;
     }
     public Trip getTrip() {
         return this.trip;

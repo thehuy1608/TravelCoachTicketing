@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,33 +13,33 @@ public class Station  implements java.io.Serializable {
 
 
      private Integer stationId;
-     private CityOrDistrict cityOrDistrict;
+     private Cityordistrict cityordistrict;
      private String stationName;
      private String stationAddress;
      private String stationHotline;
      private Date modifiedDate;
-     private Set<Line> linesForDestinationStationId = new HashSet<Line>(0);
      private Set<Line> linesForDepartureStationId = new HashSet<Line>(0);
+     private Set<Line> linesForDestinationStationId = new HashSet<Line>(0);
 
     public Station() {
     }
 
 	
-    public Station(CityOrDistrict cityOrDistrict, String stationName, String stationAddress, String stationHotline, Date modifiedDate) {
-        this.cityOrDistrict = cityOrDistrict;
+    public Station(Cityordistrict cityordistrict, String stationName, String stationAddress, String stationHotline, Date modifiedDate) {
+        this.cityordistrict = cityordistrict;
         this.stationName = stationName;
         this.stationAddress = stationAddress;
         this.stationHotline = stationHotline;
         this.modifiedDate = modifiedDate;
     }
-    public Station(CityOrDistrict cityOrDistrict, String stationName, String stationAddress, String stationHotline, Date modifiedDate, Set<Line> linesForDestinationStationId, Set<Line> linesForDepartureStationId) {
-       this.cityOrDistrict = cityOrDistrict;
+    public Station(Cityordistrict cityordistrict, String stationName, String stationAddress, String stationHotline, Date modifiedDate, Set<Line> linesForDepartureStationId, Set<Line> linesForDestinationStationId) {
+       this.cityordistrict = cityordistrict;
        this.stationName = stationName;
        this.stationAddress = stationAddress;
        this.stationHotline = stationHotline;
        this.modifiedDate = modifiedDate;
-       this.linesForDestinationStationId = linesForDestinationStationId;
        this.linesForDepartureStationId = linesForDepartureStationId;
+       this.linesForDestinationStationId = linesForDestinationStationId;
     }
    
     public Integer getStationId() {
@@ -49,12 +49,12 @@ public class Station  implements java.io.Serializable {
     public void setStationId(Integer stationId) {
         this.stationId = stationId;
     }
-    public CityOrDistrict getCityOrDistrict() {
-        return this.cityOrDistrict;
+    public Cityordistrict getCityordistrict() {
+        return this.cityordistrict;
     }
     
-    public void setCityOrDistrict(CityOrDistrict cityOrDistrict) {
-        this.cityOrDistrict = cityOrDistrict;
+    public void setCityordistrict(Cityordistrict cityordistrict) {
+        this.cityordistrict = cityordistrict;
     }
     public String getStationName() {
         return this.stationName;
@@ -84,19 +84,19 @@ public class Station  implements java.io.Serializable {
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-    public Set<Line> getLinesForDestinationStationId() {
-        return this.linesForDestinationStationId;
-    }
-    
-    public void setLinesForDestinationStationId(Set<Line> linesForDestinationStationId) {
-        this.linesForDestinationStationId = linesForDestinationStationId;
-    }
     public Set<Line> getLinesForDepartureStationId() {
         return this.linesForDepartureStationId;
     }
     
     public void setLinesForDepartureStationId(Set<Line> linesForDepartureStationId) {
         this.linesForDepartureStationId = linesForDepartureStationId;
+    }
+    public Set<Line> getLinesForDestinationStationId() {
+        return this.linesForDestinationStationId;
+    }
+    
+    public void setLinesForDestinationStationId(Set<Line> linesForDestinationStationId) {
+        this.linesForDestinationStationId = linesForDestinationStationId;
     }
 
 

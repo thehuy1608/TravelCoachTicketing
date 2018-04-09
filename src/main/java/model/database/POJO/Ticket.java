@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,7 +19,7 @@ public class Ticket  implements java.io.Serializable {
      private float ticketPrice;
      private String description;
      private Date modifiedDate;
-     private Set<InvoiceLineItem> invoiceLineItems = new HashSet<InvoiceLineItem>(0);
+     private Set<Invoicelineitem> invoicelineitems = new HashSet<Invoicelineitem>(0);
 
     public Ticket() {
     }
@@ -32,14 +32,14 @@ public class Ticket  implements java.io.Serializable {
         this.ticketPrice = ticketPrice;
         this.modifiedDate = modifiedDate;
     }
-    public Ticket(Trip trip, String ticketName, byte ticketSeatNumber, float ticketPrice, String description, Date modifiedDate, Set<InvoiceLineItem> invoiceLineItems) {
+    public Ticket(Trip trip, String ticketName, byte ticketSeatNumber, float ticketPrice, String description, Date modifiedDate, Set<Invoicelineitem> invoicelineitems) {
        this.trip = trip;
        this.ticketName = ticketName;
        this.ticketSeatNumber = ticketSeatNumber;
        this.ticketPrice = ticketPrice;
        this.description = description;
        this.modifiedDate = modifiedDate;
-       this.invoiceLineItems = invoiceLineItems;
+       this.invoicelineitems = invoicelineitems;
     }
    
     public Integer getTicketId() {
@@ -91,12 +91,12 @@ public class Ticket  implements java.io.Serializable {
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-    public Set<InvoiceLineItem> getInvoiceLineItems() {
-        return this.invoiceLineItems;
+    public Set<Invoicelineitem> getInvoicelineitems() {
+        return this.invoicelineitems;
     }
     
-    public void setInvoiceLineItems(Set<InvoiceLineItem> invoiceLineItems) {
-        this.invoiceLineItems = invoiceLineItems;
+    public void setInvoicelineitems(Set<Invoicelineitem> invoicelineitems) {
+        this.invoicelineitems = invoicelineitems;
     }
 
 

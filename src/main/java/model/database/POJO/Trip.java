@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -17,8 +17,8 @@ public class Trip  implements java.io.Serializable {
      private String tripName;
      private String description;
      private Date modifiedDate;
+     private Tripstatus tripstatus;
      private Set<CoachDriverTrip> coachDriverTrips = new HashSet<CoachDriverTrip>(0);
-     private TripStatus tripStatus;
      private Set<Ticket> tickets = new HashSet<Ticket>(0);
      private Schedule schedule;
 
@@ -31,13 +31,13 @@ public class Trip  implements java.io.Serializable {
         this.tripName = tripName;
         this.modifiedDate = modifiedDate;
     }
-    public Trip(Line line, String tripName, String description, Date modifiedDate, Set<CoachDriverTrip> coachDriverTrips, TripStatus tripStatus, Set<Ticket> tickets, Schedule schedule) {
+    public Trip(Line line, String tripName, String description, Date modifiedDate, Tripstatus tripstatus, Set<CoachDriverTrip> coachDriverTrips, Set<Ticket> tickets, Schedule schedule) {
        this.line = line;
        this.tripName = tripName;
        this.description = description;
        this.modifiedDate = modifiedDate;
+       this.tripstatus = tripstatus;
        this.coachDriverTrips = coachDriverTrips;
-       this.tripStatus = tripStatus;
        this.tickets = tickets;
        this.schedule = schedule;
     }
@@ -77,19 +77,19 @@ public class Trip  implements java.io.Serializable {
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
+    public Tripstatus getTripstatus() {
+        return this.tripstatus;
+    }
+    
+    public void setTripstatus(Tripstatus tripstatus) {
+        this.tripstatus = tripstatus;
+    }
     public Set<CoachDriverTrip> getCoachDriverTrips() {
         return this.coachDriverTrips;
     }
     
     public void setCoachDriverTrips(Set<CoachDriverTrip> coachDriverTrips) {
         this.coachDriverTrips = coachDriverTrips;
-    }
-    public TripStatus getTripStatus() {
-        return this.tripStatus;
-    }
-    
-    public void setTripStatus(TripStatus tripStatus) {
-        this.tripStatus = tripStatus;
     }
     public Set<Ticket> getTickets() {
         return this.tickets;

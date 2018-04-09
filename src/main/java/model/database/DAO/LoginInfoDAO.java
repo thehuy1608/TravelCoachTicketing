@@ -30,7 +30,7 @@ public class LoginInfoDAO {
         hibernate_session.beginTransaction();
         try {
             byte[] encrypted_login_password = Encryption.encrypt_AES(login_password);
-            String hql = "SELECT COUNT(*) FROM LoginInfo login_info WHERE login_info.loginName=:param_login_name AND login_info.loginPassword=:param_login_password";
+            String hql = "SELECT COUNT(*) FROM Logininfo login_info WHERE login_info.loginName=:param_login_name AND login_info.loginPassword=:param_login_password";
             Query query = hibernate_session.createQuery(hql);
             query.setString("param_login_name", login_name);
             query.setBinary("param_login_password", encrypted_login_password);
@@ -62,7 +62,7 @@ public class LoginInfoDAO {
         hibernate_session.beginTransaction();
         try {
             byte[] encrypted_login_password = Encryption.encrypt_AES(login_password);
-            String hql = "SELECT userId FROM LoginInfo login_info WHERE login_info.loginName=:param_login_name AND login_info.loginPassword=:param_login_password";
+            String hql = "SELECT userId FROM Logininfo login_info WHERE login_info.loginName=:param_login_name AND login_info.loginPassword=:param_login_password";
             Query query = hibernate_session.createQuery(hql);
             query.setString("param_login_name", login_name);
             query.setBinary("param_login_password", encrypted_login_password);

@@ -1,5 +1,5 @@
 package model.database.POJO;
-// Generated Mar 28, 2018 5:38:22 PM by Hibernate Tools 4.3.1
+// Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -17,14 +17,14 @@ public class Users  implements java.io.Serializable {
      private byte isGoogleLogin;
      private byte isFacebookLogin;
      private Date modifiedDate;
-     private UserFacebookAccount userFacebookAccount;
-     private UserInfo userInfo;
-     private Set<UserTripLog> userTripLogs = new HashSet<UserTripLog>(0);
-     private UserPaymentInfo userPaymentInfo;
-     private LoginInfo loginInfo;
+     private Usergoogleaccount usergoogleaccount;
+     private Logininfo logininfo;
+     private Userpaymentinfo userpaymentinfo;
+     private Userinfo userinfo;
      private Set<Invoice> invoices = new HashSet<Invoice>(0);
-     private Set<SpecialPromotion> specialPromotions = new HashSet<SpecialPromotion>(0);
-     private UserGoogleAccount userGoogleAccount;
+     private Set<Specialpromotion> specialpromotions = new HashSet<Specialpromotion>(0);
+     private Userfacebookaccount userfacebookaccount;
+     private Set<Usertriplog> usertriplogs = new HashSet<Usertriplog>(0);
 
     public Users() {
     }
@@ -36,19 +36,19 @@ public class Users  implements java.io.Serializable {
         this.isFacebookLogin = isFacebookLogin;
         this.modifiedDate = modifiedDate;
     }
-    public Users(Role role, byte isGoogleLogin, byte isFacebookLogin, Date modifiedDate, UserFacebookAccount userFacebookAccount, UserInfo userInfo, Set<UserTripLog> userTripLogs, UserPaymentInfo userPaymentInfo, LoginInfo loginInfo, Set<Invoice> invoices, Set<SpecialPromotion> specialPromotions, UserGoogleAccount userGoogleAccount) {
+    public Users(Role role, byte isGoogleLogin, byte isFacebookLogin, Date modifiedDate, Usergoogleaccount usergoogleaccount, Logininfo logininfo, Userpaymentinfo userpaymentinfo, Userinfo userinfo, Set<Invoice> invoices, Set<Specialpromotion> specialpromotions, Userfacebookaccount userfacebookaccount, Set<Usertriplog> usertriplogs) {
        this.role = role;
        this.isGoogleLogin = isGoogleLogin;
        this.isFacebookLogin = isFacebookLogin;
        this.modifiedDate = modifiedDate;
-       this.userFacebookAccount = userFacebookAccount;
-       this.userInfo = userInfo;
-       this.userTripLogs = userTripLogs;
-       this.userPaymentInfo = userPaymentInfo;
-       this.loginInfo = loginInfo;
+       this.usergoogleaccount = usergoogleaccount;
+       this.logininfo = logininfo;
+       this.userpaymentinfo = userpaymentinfo;
+       this.userinfo = userinfo;
        this.invoices = invoices;
-       this.specialPromotions = specialPromotions;
-       this.userGoogleAccount = userGoogleAccount;
+       this.specialpromotions = specialpromotions;
+       this.userfacebookaccount = userfacebookaccount;
+       this.usertriplogs = usertriplogs;
     }
    
     public Integer getUserId() {
@@ -86,40 +86,33 @@ public class Users  implements java.io.Serializable {
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
-    public UserFacebookAccount getUserFacebookAccount() {
-        return this.userFacebookAccount;
+    public Usergoogleaccount getUsergoogleaccount() {
+        return this.usergoogleaccount;
     }
     
-    public void setUserFacebookAccount(UserFacebookAccount userFacebookAccount) {
-        this.userFacebookAccount = userFacebookAccount;
+    public void setUsergoogleaccount(Usergoogleaccount usergoogleaccount) {
+        this.usergoogleaccount = usergoogleaccount;
     }
-    public UserInfo getUserInfo() {
-        return this.userInfo;
-    }
-    
-    public void setUserInfo(UserInfo userInfo) {
-        this.userInfo = userInfo;
-    }
-    public Set<UserTripLog> getUserTripLogs() {
-        return this.userTripLogs;
+    public Logininfo getLogininfo() {
+        return this.logininfo;
     }
     
-    public void setUserTripLogs(Set<UserTripLog> userTripLogs) {
-        this.userTripLogs = userTripLogs;
+    public void setLogininfo(Logininfo logininfo) {
+        this.logininfo = logininfo;
     }
-    public UserPaymentInfo getUserPaymentInfo() {
-        return this.userPaymentInfo;
-    }
-    
-    public void setUserPaymentInfo(UserPaymentInfo userPaymentInfo) {
-        this.userPaymentInfo = userPaymentInfo;
-    }
-    public LoginInfo getLoginInfo() {
-        return this.loginInfo;
+    public Userpaymentinfo getUserpaymentinfo() {
+        return this.userpaymentinfo;
     }
     
-    public void setLoginInfo(LoginInfo loginInfo) {
-        this.loginInfo = loginInfo;
+    public void setUserpaymentinfo(Userpaymentinfo userpaymentinfo) {
+        this.userpaymentinfo = userpaymentinfo;
+    }
+    public Userinfo getUserinfo() {
+        return this.userinfo;
+    }
+    
+    public void setUserinfo(Userinfo userinfo) {
+        this.userinfo = userinfo;
     }
     public Set<Invoice> getInvoices() {
         return this.invoices;
@@ -128,19 +121,26 @@ public class Users  implements java.io.Serializable {
     public void setInvoices(Set<Invoice> invoices) {
         this.invoices = invoices;
     }
-    public Set<SpecialPromotion> getSpecialPromotions() {
-        return this.specialPromotions;
+    public Set<Specialpromotion> getSpecialpromotions() {
+        return this.specialpromotions;
     }
     
-    public void setSpecialPromotions(Set<SpecialPromotion> specialPromotions) {
-        this.specialPromotions = specialPromotions;
+    public void setSpecialpromotions(Set<Specialpromotion> specialpromotions) {
+        this.specialpromotions = specialpromotions;
     }
-    public UserGoogleAccount getUserGoogleAccount() {
-        return this.userGoogleAccount;
+    public Userfacebookaccount getUserfacebookaccount() {
+        return this.userfacebookaccount;
     }
     
-    public void setUserGoogleAccount(UserGoogleAccount userGoogleAccount) {
-        this.userGoogleAccount = userGoogleAccount;
+    public void setUserfacebookaccount(Userfacebookaccount userfacebookaccount) {
+        this.userfacebookaccount = userfacebookaccount;
+    }
+    public Set<Usertriplog> getUsertriplogs() {
+        return this.usertriplogs;
+    }
+    
+    public void setUsertriplogs(Set<Usertriplog> usertriplogs) {
+        this.usertriplogs = usertriplogs;
     }
 
 

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.database.POJO.Station" table="Station" optimistic-lock="version">
+    <class name="model.database.POJO.Station" table="station" catalog="travelcoachticketing" optimistic-lock="version">
         <id name="stationId" type="java.lang.Integer">
             <column name="StationID" />
             <generator class="identity" />
         </id>
-        <many-to-one name="cityOrDistrict" class="model.database.POJO.CityOrDistrict" fetch="select">
+        <many-to-one name="cityordistrict" class="model.database.POJO.Cityordistrict" fetch="select">
             <column name="FK_CityOrDistrictID" not-null="true" />
         </many-to-one>
         <property name="stationName" type="string">
@@ -23,15 +23,15 @@
         <property name="modifiedDate" type="date">
             <column name="ModifiedDate" length="10" not-null="true" />
         </property>
-        <set name="linesForDestinationStationId" table="Line" inverse="true" lazy="true" fetch="select">
+        <set name="linesForDepartureStationId" table="line" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="Destination_StationID" not-null="true" />
+                <column name="Departure_StationID" not-null="true" />
             </key>
             <one-to-many class="model.database.POJO.Line" />
         </set>
-        <set name="linesForDepartureStationId" table="Line" inverse="true" lazy="true" fetch="select">
+        <set name="linesForDestinationStationId" table="line" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="Departure_StationID" not-null="true" />
+                <column name="Destination_StationID" not-null="true" />
             </key>
             <one-to-many class="model.database.POJO.Line" />
         </set>

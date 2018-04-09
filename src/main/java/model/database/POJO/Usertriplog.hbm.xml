@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.database.POJO.UserTripLog" table="UserTripLog" optimistic-lock="version">
+    <class name="model.database.POJO.Usertriplog" table="usertriplog" catalog="travelcoachticketing" optimistic-lock="version">
         <id name="tripLogId" type="java.lang.Integer">
             <column name="TripLogID" />
             <generator class="identity" />

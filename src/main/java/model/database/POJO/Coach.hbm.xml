@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 28, 2018 5:38:23 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 9, 2018 1:47:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="model.database.POJO.Coach" table="Coach" optimistic-lock="version">
+    <class name="model.database.POJO.Coach" table="coach" catalog="travelcoachticketing" optimistic-lock="version">
         <id name="coachId" type="java.lang.Integer">
             <column name="CoachID" />
             <generator class="identity" />
@@ -26,7 +26,13 @@
         <property name="isOnTrip" type="byte">
             <column name="IsOnTrip" not-null="true" />
         </property>
-        <set name="coachDriverTrips" table="Coach_Driver_Trip" inverse="true" lazy="true" fetch="select">
+        <set name="seats" table="seat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FK_CoachID" not-null="true" />
+            </key>
+            <one-to-many class="model.database.POJO.Seat" />
+        </set>
+        <set name="coachDriverTrips" table="coach_driver_trip" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="FK_CoachID" not-null="true" />
             </key>
