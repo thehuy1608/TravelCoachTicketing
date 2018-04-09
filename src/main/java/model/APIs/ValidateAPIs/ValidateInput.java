@@ -26,11 +26,11 @@ public class ValidateInput {
 
     private static final String PHONE_PATTERN = "^(01[2689]|09)[0-9]{8}$";
 
-    private static final String MASTERCARD_VERIFICATION = "^5[1-5][0-9]{14}$";
+    private static final String MASTERCARD_VERIFICATION = "^((5\\d{3})|(5[5]\\d{2})|(6011)|(34\\d{1})|(37\\d{1}))-?\\s?\\d{4}-?\\s?\\d{4}-?\\s?\\d{4}|3[4,7][\\d\\s-]{15}$";
 
     private static final String DATE_PATTERN = "(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)";
 
-    private static final String VISA_VERIFICATION = "^((4\\d{3})|(5[1-5]\\d{2})|(6011)|(34\\d{1})|(37\\d{1}))-?\\s?\\d{4}-?\\s?\\d{4}-?\\s?\\d{4}|3[4,7][\\d\\s-]{15}$\n";
+    private static final String VISA_VERIFICATION = "^((4\\d{3})|(4[4]\\d{2})|(6011)|(34\\d{1})|(37\\d{1}))-?\\s?\\d{4}-?\\s?\\d{4}-?\\s?\\d{4}|3[4,7][\\d\\s-]{15}$\n";
 
     private static final String VISAMASTER_VERIFICATION = "^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$";
 

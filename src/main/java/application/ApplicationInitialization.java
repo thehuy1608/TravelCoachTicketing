@@ -25,7 +25,7 @@ public class ApplicationInitialization extends Application {
             create_initial_JSON_file();
         }
         StageController login_stage = new StageController();
-        login_stage.configure_stage(primaryStage, "/view/fxml/sign_up/sign_up_step3.fxml", "Minh Nhut Corporation", 1200, 800);
+        login_stage.configure_stage(primaryStage, "/view/fxml/sign_up/sign_up_step4.fxml", "Minh Nhut Corporation", 1200, 800);
 
         primaryStage.show();
     }
