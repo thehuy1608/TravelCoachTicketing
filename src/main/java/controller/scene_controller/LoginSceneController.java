@@ -89,7 +89,7 @@ public class LoginSceneController implements Initializable {
 
     private final ValidateInput validation = new ValidateInput();
     private LoadingAnchorPane loading_anchor_pane;
-    private long is_valid_login = 0;
+    private boolean is_valid_login = false;
     private final Border error_border = new Border(new BorderStroke(Color.RED, BorderStrokeStyle.SOLID, new CornerRadii(5), BorderWidths.DEFAULT));
 
     /**
@@ -218,9 +218,10 @@ public class LoginSceneController implements Initializable {
                 Scene current_scene = btnLogin.getScene();
                 current_scene.setCursor(Cursor.WAIT);
 
+                byte[] hash_password = Encryption.encrypt_AES(login_password);
                 //Check user's login info
-                is_valid_login = LoginInfoDAO.check_login(login_name, login_password);
-                if (is_valid_login > 0) {
+                is_valid_login = LoginInfoDAO.check_login(login_name, hash_password);
+                if (is_valid_login) {
                     Users user = LoginInfoDAO.get_user_by_login_name_and_password(login_name, login_password);
                     boolean is_logged_in = true;
                     byte[] hash_user_id = Encryption.encrypt_AES(user.getUserId().toString());
@@ -247,7 +248,7 @@ public class LoginSceneController implements Initializable {
             loading_anchor_pane.toBack();
             Stage current_stage = (Stage) btnLogin.getScene().getWindow();
             //If the login is valid, redirect to the home page, otherwise display an error message.
-            if (is_valid_login > 0) {
+            if (is_valid_login) {
                 try {
                     StageController stage_controller = new StageController();
                     stage_controller.configure_stage(current_stage, "/view/fxml/home.fxml", "Minh Nhut Corporation", 1200, 800);

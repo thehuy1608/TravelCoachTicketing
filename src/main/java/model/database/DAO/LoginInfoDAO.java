@@ -25,21 +25,20 @@ public class LoginInfoDAO {
      * @param login_password String
      * @return true if the login is matched, false otherwise.
      */
-    public static long check_login(String login_name, String login_password) {
+    public static boolean check_login(String login_name, byte[] login_password) {
         Session hibernate_session = HibernateUtil.getSessionFactory().openSession();
         hibernate_session.beginTransaction();
         try {
-            byte[] encrypted_login_password = Encryption.encrypt_AES(login_password);
             String hql = "SELECT COUNT(*) FROM Logininfo login_info WHERE login_info.loginName=:param_login_name AND login_info.loginPassword=:param_login_password";
             Query query = hibernate_session.createQuery(hql);
             query.setString("param_login_name", login_name);
-            query.setBinary("param_login_password", encrypted_login_password);
+            query.setBinary("param_login_password", login_password);
             List<Long> result_list = query.list();
             long result = result_list.get(0);
             if (result > 0) {
-                return result;
+                return true;
             } else {
-                return 0;
+                return false;
             }
         } catch (Exception e) {
             hibernate_session.flush();
@@ -47,7 +46,7 @@ public class LoginInfoDAO {
         }
         hibernate_session.flush();
         hibernate_session.close();
-        return 0;
+        return false;
     }
 
     /**
